@@ -1,0 +1,29 @@
+services:
+  backstage:
+    # image: carlosrobertodevops/backstage:latest imagem no Hub
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backstage
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_USER: ${POSTGRES_USER}
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+    ports:
+      - '${PORT}:${PORT}'
+
+  db:
+    image: postgres
+    restart: always
+    container_name: postgres
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: ${POSTGRES_HOST_AUTH_METHOD}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
