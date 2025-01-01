@@ -1,0 +1,46 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: devops
+  description: The Devops Unit
+spec:
+  type: team
+  profile:
+    displayName: DevOps, FullCycle and FullStack
+    email: carlos.roberto.devps@gmail.com.com
+    picture: https://example.com/groups/team.jpeg
+  parent: ops
+  children: [ backstage, other ]
+  members: [ carlos.roberto.devops, guest ]
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: idpadmins
+  description: The infra business unit
+spec:
+  type: business-unit
+  profile:
+    displayName: Infrastructure
+    email: infrastructure@example.com
+    picture: https://example.com/groups/bu-infrastructure.jpeg
+  parent: ops
+  children: [ backstage, other ]
+  members: [ jdoe ]
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: default
+  description: Default Developments
+spec:
+  type: business-unit
+  profile:
+    displayName: default
+    email: infrastructure@example.com
+    picture: https://example.com/groups/bu-infrastructure.jpeg
+  parent: ops
+  children: [ backstage, other ]
+  members: [ guest ]
