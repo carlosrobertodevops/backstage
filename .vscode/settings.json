@@ -2,5 +2,8 @@
 	"cSpell.words": [
 		"Qube",
 		"sonarqube"
-	]
+	],
+	"files.exclude": {
+		"**/.git": false
+	}
 }
