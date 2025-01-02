@@ -27,10 +27,10 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: carlos.roberto.devps
+  name: carlos
 spec:
   profile:
-    displayName: Jenny Doe
+    displayName: Carlos Roberto dos Santos Silva
     email: carlos.roberto.devps@gmail.com
     picture: https://example.com/staff/jenny-with-party-hat.jpeg
   memberOf: [ guest, employees, devops, maintainers, idpadmins, default, team-a, team-b ]
@@ -148,5 +148,4 @@ spec:
     picture: https://example.com/groups/bu-infrastructure.jpeg
   children: []
 ---
-
 
