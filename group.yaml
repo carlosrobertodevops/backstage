@@ -1,6 +1,21 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
+  name: employees
+  description: The Devops Unit
+spec:
+  type: team
+  profile:
+    displayName: Eemployees
+    email: carlos.roberto.devps@gmail.com.com
+    picture: https://example.com/groups/team.jpeg
+  parent: ops
+  children: []
+  members: [ eemployees, carlos.roberto.devops, guest ]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
   name: devops
   description: The Devops Unit
 spec:
@@ -25,8 +40,8 @@ spec:
     email: infrastructure@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   parent: ops
-  children: [ backstage, other ]
-  members: [ jdoe, carlos.roberto.devops, guest ]
+  children: []
+  members: [ jdoe, carlos.roberto.devops, guest, employees ]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Group
@@ -67,11 +82,37 @@ spec:
   type: business-unit
   profile:
     displayName: default
+    email: guest@example.com
+    picture: https://example.com/groups/bu-infrastructure.jpeg
+  parent: ops
+  children: [ backstage, other ]
+  members: [ default, carlos.roberto.devops, jdoe, guest ]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: maintainers
+  description: Default Maintainers
+spec:
+  type: business-unit
+  profile:
+    displayName: default
     email: infrastructure@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   parent: ops
   children: [ backstage, other ]
-  members: [ default, guest ]
+  members: [ default, maintainers, carlos.roberto.devops, jdoe, guest ]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: guest
+spec:
+  profile:
+    displayName: guest
+    email: gues@example.com
+    picture: https://example.com/staff/jenny-with-party-hat.jpeg
+  memberOf: [ team-a, team-b, employees ]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: User
@@ -91,6 +132,17 @@ metadata:
 spec:
   profile:
     displayName: Jenny Doe
-    email: jenny-doe@example.com
+    email: carlos.roberto.devps@gmail.com
+    picture: https://example.com/staff/jenny-with-party-hat.jpeg
+  memberOf: [ team-b, employees. devops, idpadmins, defaulf, team-a, team-b ]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: maintainers
+spec:
+  profile:
+    displayName: maintainers
+    email: maintainerse@example.com
     picture: https://example.com/staff/jenny-with-party-hat.jpeg
   memberOf: [ team-b, employees. devops, idpadmins, defaulf, team-a, team-b ]
