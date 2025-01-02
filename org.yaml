@@ -11,7 +11,7 @@ spec:
     displayName: guest
     email: gues@example.com
     picture: https://example.com/staff/jenny-with-party-hat.jpeg
-  memberOf: [ team-a, team-b, employees ]
+  memberOf: [ guests, team-a, team-b, employees ]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: User
@@ -22,7 +22,7 @@ spec:
     displayName: Jenny Doe
     email: jenny-doe@example.com
     picture: https://example.com/staff/jenny-with-party-hat.jpeg
-  memberOf: [ team-a, team-b, employees ]
+  memberOf: [ guests, team-a, team-b, employees ]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: User
@@ -33,7 +33,7 @@ spec:
     displayName: Carlos Roberto dos Santos Silva
     email: carlos.roberto.devps@gmail.com
     picture: https://example.com/staff/jenny-with-party-hat.jpeg
-  memberOf: [ guest, employees, devops, maintainers, idpadmins, default, team-a, team-b ]
+  memberOf: [ guests, employees, devops, maintainers, idpadmins, default, team-a, team-b ]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: User
@@ -44,7 +44,7 @@ spec:
     displayName: The Maintainers Unit
     email: maintainerse@example.com
     picture: https://example.com/staff/jenny-with-party-hat.jpeg
-  memberOf: [ team-b, employees. devops, idpadmins, defaulf, team-a, team-b ]
+  memberOf: [ guests, team-b, employees. devops, idpadmins, defaulf, team-a, team-b ]
 ---
 
 # GROUPS
