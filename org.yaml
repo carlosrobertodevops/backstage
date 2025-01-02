@@ -148,7 +148,6 @@ spec:
     picture: https://example.com/groups/bu-infrastructure.jpeg
   children: []
 ---
-
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
@@ -161,6 +160,3 @@ spec:
     email: artist-relations-team@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   children: []
----
-
-
