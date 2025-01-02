@@ -14,7 +14,6 @@ import { ScaffolderPage, scaffolderPlugin } from '@backstage/plugin-scaffolder';
 import { orgPlugin } from '@backstage/plugin-org';
 import { SearchPage } from '@backstage/plugin-search';
 import {
-  DefaultTechDocsHome,
   TechDocsIndexPage,
   techdocsPlugin,
   TechDocsReaderPage,
@@ -26,7 +25,6 @@ import { apis } from './apis';
 import { entityPage } from './components/catalog/EntityPage';
 import { searchPage } from './components/search/SearchPage';
 import { Root } from './components/Root';
-
 import {
   AlertDisplay,
   OAuthRequestDialog,
@@ -39,9 +37,11 @@ import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
 import githubActionsPlugin from '@backstage-community/plugin-github-actions/alpha';
+// import sonarQubePlugin from '@backstage-community/plugin-sonarqube/alpha';
 
 const app = createApp({
   apis,
+  // sonarQubePlugin,
   githubActionsPlugin,
   bindRoutes({ bind }) {
     bind(catalogPlugin.externalRoutes, {

@@ -27,6 +27,17 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
+  name: sda-se-reviewer
+spec:
+  profile:
+    displayName: sda-se-reviewer
+    email: sda-se-reviewers@example.com
+    picture: https://example.com/staff/jenny-with-party-hat.jpeg
+  memberOf: [ guests, team-a, team-b, employees ]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
   name: carlos
 spec:
   profile:
@@ -159,4 +170,17 @@ spec:
     displayName: The artist-relations-team Unit
     email: artist-relations-team@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: sda-se-reviewers
+  description: sda-se-reviewers
+spec:
+  type: team
+  profile:
+    displayName: The sda-se-reviewers Unit
+    email: sda-se-reviewers@example.com
+    picture: https://example.com/groups/sda-se-reviewers.jpeg
   children: []

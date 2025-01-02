@@ -14,7 +14,7 @@ import {
   createOAuthProviderFactory,
 } from '@backstage/plugin-auth-node';
 
-import { stringifyEntityRef, DEFAULT_NAMESPACE } from '@backstage/catalog-model';
+import { stringifyEntityRef } from '@backstage/catalog-model';
 
 const backend = createBackend();
 
@@ -134,4 +134,5 @@ const customAuthResolver = createBackendModule({
 });
 
 backend.add(customAuthResolver);
+// backend.add(import('@backstage-community/plugin-sonarqube-backend'));
 backend.start();

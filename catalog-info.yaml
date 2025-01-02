@@ -11,16 +11,17 @@ spec:
   type: website
   owner: john@example.com
   lifecycle: experimental
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: backstage
-  description: |
-    Backstage is an open-source developer portal that puts the developer experience first.
-  annotations:
-    sonarqube.org/project-key: ${SONARQUBE_TOKEN} #YOUR_INSTANCE_NAME/YOUR_PROJECT_KEY
-spec:
-  type: library
-  owner: CNCF
-  lifecycle: experimental
+
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: Component
+# metadata:
+#   name: backstage
+#   description: |
+#     Backstage is an open-source developer portal that puts the developer experience first.
+#   annotations:
+#     sonarqube.org/project-key: ${SONARQUBE_TOKEN} #YOUR_INSTANCE_NAME/YOUR_PROJECT_KEY
+# spec:
+#   type: library
+#   owner: CNCF
+#   lifecycle: experimental

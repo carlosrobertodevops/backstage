@@ -65,9 +65,7 @@ import {
   isGithubActionsAvailable,
 } from '@backstage-community/plugin-github-actions';
 
-// import {githubActionsPlugin} from '@backstage-community/plugin-github-actions/alpha';
 import { EntitySonarQubeCard } from '@backstage-community/plugin-sonarqube';
-
 
 const techdocsContent = (
   <EntityTechdocsContent>
