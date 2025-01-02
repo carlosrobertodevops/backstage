@@ -1,13 +1,7 @@
 ---
-# GROUPS
+# USERS
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
-apiVersion: backstage.io/v1alpha1
-kind: User
-metadata:
-  name: guest
-spec:
-  memberOf: [ guests ]
----
+
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
@@ -39,7 +33,7 @@ spec:
     displayName: Jenny Doe
     email: carlos.roberto.devps@gmail.com
     picture: https://example.com/staff/jenny-with-party-hat.jpeg
-  memberOf: [ guest, employees. devops, maintainers, idpadmins, default, team-a, team-b ]
+  memberOf: [ guest, employees, devops, maintainers, idpadmins, default, team-a, team-b ]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: User
@@ -47,13 +41,13 @@ metadata:
   name: maintainers
 spec:
   profile:
-    displayName: maintainers
+    displayName: The Maintainers Unit
     email: maintainerse@example.com
     picture: https://example.com/staff/jenny-with-party-hat.jpeg
   memberOf: [ team-b, employees. devops, idpadmins, defaulf, team-a, team-b ]
 ---
 
-# USERS
+# GROUPS
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
 apiVersion: backstage.io/v1alpha1
 kind: Group
@@ -67,11 +61,11 @@ apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
   name: employees
-  description: The Devops Unit
+  description: The Employees Unit
 spec:
   type: team
   profile:
-    displayName: Eemployees
+    displayName: Employees
     email: carlos.roberto.devps@gmail.com.com
     picture: https://example.com/groups/team.jpeg
   children: []
@@ -97,7 +91,7 @@ metadata:
 spec:
   type: business-unit
   profile:
-    displayName: Infrastructure
+    displayName: The Infrastructure Unit
     email: infrastructure@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   children: []
