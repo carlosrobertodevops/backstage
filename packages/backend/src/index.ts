@@ -100,6 +100,7 @@ const customAuthResolver = createBackendModule({
 
               // This example resolver simply uses the local part of the email as the name.
               const [userId] = email.split('@');
+              // const [userNAME] = userId.split('.');
 
               // This helper function handles sign-in by looking up a user in the catalog.
               // The lookup can be done either by reference, annotations, or custom filters.
