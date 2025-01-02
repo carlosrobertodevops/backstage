@@ -149,3 +149,17 @@ spec:
   children: []
 ---
 
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: artist-relations-team
+  description: Default Maintainers
+spec:
+  type: team
+  profile:
+    displayName: artist-relations-team
+    email: artist-relations-team@example.com
+    picture: https://example.com/groups/bu-infrastructure.jpeg
+  children: []
+---
+
