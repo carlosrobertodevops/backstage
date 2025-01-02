@@ -100,7 +100,7 @@ const customAuthResolver = createBackendModule({
 
               // This example resolver simply uses the local part of the email as the name.
               const [userId] = email.split('@');
-              // const [userNAME] = userId.split('.');
+              const [userNAME] = userId.split('.');
 
               // This helper function handles sign-in by looking up a user in the catalog.
               // The lookup can be done either by reference, annotations, or custom filters.
@@ -116,7 +116,7 @@ const customAuthResolver = createBackendModule({
               // By using `stringifyEntityRef` we ensure that the reference is formatted correctly
               const userEntity = stringifyEntityRef({
                 kind: 'User',
-                name: userId,
+                name: userNAME,
                 namespace: 'default',
               });
               return ctx.issueToken({
