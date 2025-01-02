@@ -36,13 +36,13 @@ import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
-import githubActionsPlugin from '@backstage-community/plugin-github-actions/alpha';
+// import githubActionsPlugin from '@backstage-community/plugin-github-actions/alpha';
 // import sonarQubePlugin from '@backstage-community/plugin-sonarqube/alpha';
 
 const app = createApp({
   apis,
   // sonarQubePlugin,
-  githubActionsPlugin,
+  // githubActionsPlugin,
   bindRoutes({ bind }) {
     bind(catalogPlugin.externalRoutes, {
       createComponent: scaffolderPlugin.routes.root,
