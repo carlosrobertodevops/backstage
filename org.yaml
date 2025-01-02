@@ -65,7 +65,7 @@ metadata:
 spec:
   type: team
   profile:
-    displayName: Employees
+    displayName: The Employees Unit
     email: employeess@gmail.com.com
     picture: https://example.com/groups/team.jpeg
   children: []
@@ -89,7 +89,7 @@ metadata:
   name: idpadmins
   description: The infra business unit
 spec:
-  type: business-unit
+  type: team
   profile:
     displayName: The Infrastructure Unit
     email: infrastructure@example.com
@@ -128,9 +128,9 @@ metadata:
   name: default
   description: Default Developments
 spec:
-  type: business-unit
+  type: team
   profile:
-    displayName: default
+    displayName: Default
     email: default@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   children: []
@@ -139,11 +139,11 @@ apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
   name: maintainers
-  description: Default Maintainers
+  description: Default Maintainers Unit
 spec:
-  type: business-unit
+  type: team
   profile:
-    displayName: Maintainers
+    displayName: The Maintainers Unit
     email: maintainers@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   children: []
@@ -156,7 +156,7 @@ metadata:
 spec:
   type: team
   profile:
-    displayName: artist-relations-team
+    displayName: The artist-relations-team Unit
     email: artist-relations-team@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   children: []
