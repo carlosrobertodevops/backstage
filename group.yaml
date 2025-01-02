@@ -13,7 +13,6 @@ spec:
   children: [ backstage, other ]
   members: [ carlos.roberto.devops, guest ]
 ---
-
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
@@ -27,9 +26,38 @@ spec:
     picture: https://example.com/groups/bu-infrastructure.jpeg
   parent: ops
   children: [ backstage, other ]
-  members: [ jdoe ]
+  members: [ jdoe, carlos.roberto.devops, guest ]
 ---
-
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-a
+  description: team-a
+spec:
+  type: team
+  profile:
+    displayName: team-a
+    email: infrastructure@example.com
+    picture: https://example.com/groups/bu-infrastructure.jpeg
+  parent: ops
+  children: [ backstage, other ]
+  members: [ default, carlos.roberto.devops, guest ]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-b
+  description: team-b
+spec:
+  type: team
+  profile:
+    displayName: team-b
+    email: infrastructure@example.com
+    picture: https://example.com/groups/bu-infrastructure.jpeg
+  parent: ops
+  children: [ backstage, other ]
+  members: [ default, carlos.roberto.devops, guest ]
+---
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
@@ -44,3 +72,25 @@ spec:
   parent: ops
   children: [ backstage, other ]
   members: [ default, guest ]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: jdoe
+spec:
+  profile:
+    displayName: Jenny Doe
+    email: jenny-doe@example.com
+    picture: https://example.com/staff/jenny-with-party-hat.jpeg
+  memberOf: [ team-a, team-b, employees ]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: carlos.roberto.devps
+spec:
+  profile:
+    displayName: Jenny Doe
+    email: jenny-doe@example.com
+    picture: https://example.com/staff/jenny-with-party-hat.jpeg
+  memberOf: [ team-b, employees. devops, idpadmins, defaulf, team-a, team-b ]
