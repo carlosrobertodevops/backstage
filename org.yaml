@@ -66,7 +66,7 @@ spec:
   type: team
   profile:
     displayName: Employees
-    email: carlos.roberto.devps@gmail.com.com
+    email: employeess@gmail.com.com
     picture: https://example.com/groups/team.jpeg
   children: []
 ---
@@ -79,7 +79,7 @@ spec:
   type: team
   profile:
     displayName: DevOps, FullCycle and FullStack
-    email: carlos.roberto.devps@gmail.com.com
+    email: devops@gmail.com.com
     picture: https://example.com/groups/team.jpeg
   children: []
 ---
@@ -105,7 +105,7 @@ spec:
   type: team
   profile:
     displayName: team-a
-    email: infrastructure@example.com
+    email: team-a@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   children: []
 ---
@@ -118,7 +118,7 @@ spec:
   type: team
   profile:
     displayName: team-b
-    email: infrastructure@example.com
+    email: team-b@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   children: []
 ---
@@ -131,7 +131,7 @@ spec:
   type: business-unit
   profile:
     displayName: default
-    email: guest@example.com
+    email: default@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   children: []
 ---
@@ -144,7 +144,7 @@ spec:
   type: business-unit
   profile:
     displayName: Maintainers
-    email: infrastructure@example.com
+    email: maintainers@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   children: []
 ---
