@@ -29,6 +29,7 @@ backend:
       database: ${POSTGRES_DATABASE}
   cache:
     store: memory
+
 integrations:
   github:
   - host: github.com
