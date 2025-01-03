@@ -41,22 +41,22 @@ backend:
       port: ${POSTGRES_PORT}
       user: ${POSTGRES_USER}
       password: ${POSTGRES_PASSWORD}
-      database: ${POSTGRES_DB}
-    ensureExists: true
-    pluginDivisionMode: schema
-    plugin:
-      catalog:
-        connection:
-          database: ${POSTGRES_DATABASE}
-      auth:
-        connection:
-          database: ${POSTGRES_DATABASE}
-      app:
-        connection:
-          database: ${POSTGRES_DATABASE}
-      scaffolder:
-        connection:
-          database: ${POSTGRES_DATABASE}
+      database: ${POSTGRES_DATABASE}
+    # ensureExists: true
+    # pluginDivisionMode: schema
+    # plugin:
+    #   catalog:
+    #     connection:
+    #       database: ${POSTGRES_DATABASE}
+    #   auth:
+    #     connection:
+    #       database: ${POSTGRES_DATABASE}
+    #   app:
+    #     connection:
+    #       database: ${POSTGRES_DATABASE}
+    #   scaffolder:
+    #     connection:
+    #       database: ${POSTGRES_DATABASE}
   cache:
     store: memory
     # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
