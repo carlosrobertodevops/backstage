@@ -42,7 +42,7 @@ backend:
       user: ${POSTGRES_USER}
       password: ${POSTGRES_PASSWORD}
       database: ${POSTGRES_DATABASE}
-      ensureExists: true
+    # ensureExists: true
     # pluginDivisionMode: schema
     # plugin:
     #   catalog:
