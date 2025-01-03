@@ -36,6 +36,7 @@ import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
+import { CopilotIndexPage } from '@backstage-community/plugin-copilot';
 // import githubActionsPlugin from '@backstage-community/plugin-github-actions/alpha';
 // import sonarQubePlugin from '@backstage-community/plugin-sonarqube/alpha';
 
@@ -112,6 +113,7 @@ const routes = (
     </Route>
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
+    <Route path="/copilot" element={<CopilotIndexPage />} />
 
   </FlatRoutes>
 );
