@@ -80,6 +80,8 @@ integrations:
       secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
       profile: carlosrobertodevops
       region: ${AWS_REGION}
+      bucketName: ${TECHDOCS_BUCKET}
+      bucketPrefix: techdocs
 
 proxy:
   ### Example for how to add a proxy endpoint for the frontend.
