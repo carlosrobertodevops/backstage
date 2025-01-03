@@ -41,7 +41,7 @@ backend:
       port: ${POSTGRES_PORT}
       user: ${POSTGRES_USER}
       password: ${POSTGRES_PASSWORD}
-      database: ${POSTGRES_DATABASE}
+      database: ${POSTGRES_DB}
     ensureExists: true
     pluginDivisionMode: schema
     plugin:
