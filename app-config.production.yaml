@@ -26,7 +26,9 @@ backend:
       port: ${POSTGRES_PORT}
       user: ${POSTGRES_USER}
       password: ${POSTGRES_PASSWORD}
-
+      database: ${POSTGRES_DATABASE}
+  cache:
+    store: memory
 integrations:
   github:
   - host: github.com
@@ -54,8 +56,14 @@ techdocs:
   builder: 'local' # Alternatives - 'external'
   generator:
     runIn: 'docker' # Alternatives - 'local'
+  # publisher:
+  #   type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
   publisher:
-    type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
+    type: "awsS3"
+    awsS3:
+      bucketName: ${TECHDOCS_BUCKET}
+      accountId: ${AWS_ACCOUNT_ID}
+      region: ${AWS_REGION}
 
 auth:
   environment: development
@@ -65,51 +73,3 @@ auth:
       development:
         clientId: ${AUTH_GITHUB_CLIENT_ID}
         clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
-
-scaffolder: # see https://backstage.io/docs/features/software-templates/configuration for software template options
-
-catalog:
-  import:
-    entityFilename: catalog-info.yaml
-    pullRequestBranchName: backstage-integration
-  rules:
-  - allow: [ Component, System, API, Resource, Location, Group, User, Template ]
-  locations:
-  # Local example data, file locations are relative to the backend process, typically `packages/backend`
-  - type: url
-    target: ${CATALOG_ENTITIES_URL} # ../../examples/entities.yaml
-
-  # Local example template
-  - type: url
-    target: ${CATALOG_TEMPLATE_URL} # ../../examples/template/template.yaml
-    # rules:
-    # - allow: [ Template ]
-
-    # Local example organizational data
-  - type: url
-    target: ${CATALOG_ORG_URL} # ../../examples/org.yaml
-    # rules:
-    # - allow: [ User, Group ]
-
-    # Local example group data
-  - type: url
-    target: ${CATALOG_GROUP_URL} # ../../examples/group.yaml
-    # rules:
-    # - allow: [ User, Group ]
-    # https://github.com/carlosrobertodevops/backstage/blob/main/
-    ## Uncomment these lines to add more example data
-    # - type: url
-    #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
-
-    ## Uncomment these lines to add an example org
-    # - type: url
-    #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
-    #   rules:
-    #     - allow: [User, Group]
-
-kubernetes: # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
-
-# see https://backstage.io/docs/permissions/getting-started for more on the permission framework
-permission:
-  # setting this to `false` will disable permissions
-  enabled: true
