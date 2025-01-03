@@ -30,6 +30,18 @@ backend:
   cache:
     store: memory
 
+copilot:
+  scheduler:
+    frequency:
+      hours: 2
+    timeout:
+      minutes: 2
+    initialDelay:
+      seconds: 15
+  host: ${YOUR_GITHUB_HOST_HERE}
+  enterprise: ${YOUR_ENTERPRISE_NAME_HERE}
+  organization: ${YOUR_ORGANIZATION_NAME_HERE}
+
 integrations:
   github:
   - host: github.com
