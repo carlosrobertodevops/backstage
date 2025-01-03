@@ -8,10 +8,15 @@ backend:
   # reachable not just from within the backend host, but from all of your
   # callers. When its value is "http://localhost:7007", it's strictly private
   # and can't be reached by others.
+  reading:
+    allow:
+    - host: 'gist.githubusercontent.com'
+    - host: 'github.com'
   baseUrl: http://localhost:7007
   # The listener can also be expressed as a single <host>:<port> string. In this case we bind to
   # all interfaces, the most permissive setting. The right value depends on your specific deployment.
-  listen: ':7007'
+  listen:
+    port: 7007
 
   # config options: https://node-postgres.com/apis/client
   database:
@@ -21,82 +26,6 @@ backend:
       port: ${POSTGRES_PORT}
       user: ${POSTGRES_USER}
       password: ${POSTGRES_PASSWORD}
-      # https://node-postgres.com/features/ssl
-      # you can set the sslmode configuration option via the `PGSSLMODE` environment variable
-      # see https://www.postgresql.org/docs/current/libpq-ssl.html Table 33.1. SSL Mode Descriptions (e.g. require)
-      # ssl:
-      #   ca: # if you have a CA file and want to verify it you can uncomment this section
-      #     $file: <file-path>/ca/server.crt
-
-auth:
-  providers:
-    guest: {}
-
-catalog:
-  # Overrides the default list locations from app-config.yaml as these contain example data.
-  # See https://backstage.io/docs/features/software-catalog/#adding-components-to-the-catalog for more details
-  # on how to get entities into the catalog.
-  locations:
-    # Local example data, replace this with your production config, these are intended for demo use only.
-    # File locations are relative to the backend process, typically in a deployed context, such as in a Docker container, this will be the root
-    - type: file
-      target: ./examples/entities.yaml
-
-    # Local example template
-    - type: file
-      target: ./examples/template/template.yaml
-      rules:
-        - allow: [Template]
-
-    # Local example organizational data
-    - type: file
-      target: ./examples/org.yaml
-      rules:
-        - allow: [User, Group]
-app:
-  title: ${app_title} # Scaffolded Backstage App
-  baseUrl: http://localhost:3000
-
-organization:
-  name: ${organization_name} # My Company
-
-backend:
-  # Used for enabling authentication, secret is shared by all backend plugins
-  # See https://backstage.io/docs/auth/service-to-service-auth for
-  # information on the format
-  # auth:
-  #   keys:
-  #     - secret: ${BACKEND_SECRET}
-  reading:
-    allow:
-    - host: 'gist.githubusercontent.com'
-    - host: 'github.com'
-  baseUrl: http://localhost:7007
-  listen:
-    port: 7007
-    # Uncomment the following host directive to bind to specific interfaces
-    # host: 127.0.0.1
-  csp:
-    connect-src: [ "'self'", 'http:', 'https:' ]
-    # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
-    # Default Helmet Content-Security-Policy values can be removed by setting the key to false
-  cors:
-    origin: http://localhost:3000
-    methods: [ GET, HEAD, PATCH, POST, PUT, DELETE ]
-    credentials: true
-  # This is for local development only, it is not recommended to use this in production
-  # The production database configuration is stored in app-config.production.yaml
-  database:
-    # client: better-sqlite3
-    # connection: ':memory:'
-    # config options: https://node-postgres.com/apis/client
-    client: pg
-    connection:
-      host: ${POSTGRES_HOST}
-      port: ${POSTGRES_PORT}
-      user: ${POSTGRES_USER}
-      password: ${POSTGRES_PASSWORD}
-    # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
 
 integrations:
   github:
@@ -128,12 +57,6 @@ techdocs:
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
-# auth:
-#   # see https://backstage.io/docs/auth/ to learn about auth providers
-#   providers:
-#     # See https://backstage.io/docs/auth/guest/provider
-#     guest: {}
-
 auth:
   environment: development
   providers:
@@ -159,30 +82,30 @@ catalog:
   # Local example template
   - type: url
     target: ${CATALOG_TEMPLATE_URL} # ../../examples/template/template.yaml
-    rules:
-    - allow: [ Template ]
+    # rules:
+    # - allow: [ Template ]
 
-  # Local example organizational data
+    # Local example organizational data
   - type: url
     target: ${CATALOG_ORG_URL} # ../../examples/org.yaml
-    rules:
-    - allow: [ User, Group ]
-  
-  # Local example group data
+    # rules:
+    # - allow: [ User, Group ]
+
+    # Local example group data
   - type: url
     target: ${CATALOG_GROUP_URL} # ../../examples/group.yaml
-    rules:
-    - allow: [ User, Group ]
-  # https://github.com/carlosrobertodevops/backstage/blob/main/
-  ## Uncomment these lines to add more example data
-  # - type: url
-  #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
+    # rules:
+    # - allow: [ User, Group ]
+    # https://github.com/carlosrobertodevops/backstage/blob/main/
+    ## Uncomment these lines to add more example data
+    # - type: url
+    #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
 
-  ## Uncomment these lines to add an example org
-  # - type: url
-  #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
-  #   rules:
-  #     - allow: [User, Group]
+    ## Uncomment these lines to add an example org
+    # - type: url
+    #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
+    #   rules:
+    #     - allow: [User, Group]
 
 kubernetes: # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
 
