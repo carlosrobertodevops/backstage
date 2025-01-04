@@ -5,5 +5,9 @@
 	],
 	"files.exclude": {
 		"**/.git": false
-	}
+	},
+	"editor.fontSize": 12,
+	"editor.fontFamily": "'Fira Code Light'",
+	"editor.codeLensFontFamily": "'Fira Code Light'",
+	"editor.codeLensFontSize": 12
 }
