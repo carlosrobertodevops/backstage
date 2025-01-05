@@ -97,7 +97,7 @@ techdocs:
       region: ${AWS_REGION}
 
 auth:
-  environment: development
+  environment: production
   providers:
     # guest: {}
     github:
