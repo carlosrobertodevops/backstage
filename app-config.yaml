@@ -1,6 +1,6 @@
 app:
   title: ${app_title} # Scaffolded Backstage App
-  baseUrl: http://localhost:3000
+  baseUrl: ${BASEURL_LOCAL}:${PORT_APP} # http://localhost:3000
 
 organization:
   name: ${organization_name} # My Company
@@ -16,7 +16,7 @@ backend:
     allow:
     - host: 'gist.githubusercontent.com'
     - host: 'github.com'
-  baseUrl: http://localhost:7007
+  baseUrl: ${BASEURL_LOCAL}:${PORT_BACKEND} # http://localhost:7007
   listen:
     port: 7007
     # Uncomment the following host directive to bind to specific interfaces
