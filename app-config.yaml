@@ -18,7 +18,7 @@ backend:
     - host: 'github.com'
   baseUrl: ${BASEURL_LOCAL}:${PORT_BACKEND} # http://localhost:7007
   listen:
-    port: 7007
+    port: ${PORT_BACKEND}
     # Uncomment the following host directive to bind to specific interfaces
     # host: 127.0.0.1
   csp:
