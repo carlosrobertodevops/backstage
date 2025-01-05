@@ -18,10 +18,10 @@ services:
       - backstage_network
 
   backstage:
-    image: carlosrobertodevops/backstage:1.0.1
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
+    # image: carlosrobertodevops/backstage:1.0.2
+    build:
+      context: .
+      dockerfile: Dockerfile
     # platforms:
     #   - linux/amd64
     #   - linux/arm64
