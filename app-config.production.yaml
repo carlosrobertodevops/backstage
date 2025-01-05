@@ -1,6 +1,6 @@
 app:
   # Should be the same as backend.baseUrl when using the `app-backend` plugin.
-  baseUrl: ${BASEURL_PROD}:${PORT_APP} # http://localhost:7007
+  baseUrl: ${BASEURL_PROD} # http://localhost:7007
 
 backend:
   # Note that the baseUrl should be the URL that the browser and other clients
@@ -12,7 +12,7 @@ backend:
     allow:
     - host: 'gist.githubusercontent.com'
     - host: 'github.com'
-  baseUrl: ${BASEURL_PROD}:${PORT_BACKEND} # http://localhost:7007
+  baseUrl: ${BASEURL_PROD} # http://localhost:7007
   # The listener can also be expressed as a single <host>:<port> string. In this case we bind to
   # all interfaces, the most permissive setting. The right value depends on your specific deployment.
   listen:
