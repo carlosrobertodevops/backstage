@@ -60,13 +60,15 @@ integrations:
     mainAccount:
       profile: carlosrobertodevops
     accounts:
-    - accountId: ${AWS_ACCOUNT_ID}
+      accountId: ${AWS_ACCOUNT_ID}
       accessKeyId: ${AWS_ACCESS_KEY_ID}
       secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
-      profile: carlosrobertodevops
       region: ${AWS_REGION}
-      bucketName: ${TECHDOCS_BUCKET}
-      bucketPrefix: techdocs
+      bucketName: ${BACKSTAGE_BUCKET}
+      bucketPrefix: backstage-app
+      bucketPrefixCatalog: backstage-catalog
+      bucketPrefixTechdocs: techdocs
+      profile: carlosrobertodevops
 
 proxy:
   ### Example for how to add a proxy endpoint for the frontend.
@@ -81,9 +83,9 @@ proxy:
 # and an external cloud storage when deploying TechDocs for production use-case.
 # https://backstage.io/docs/features/techdocs/how-to-guides#how-to-migrate-from-techdocs-basic-to-recommended-deployment-approach
 techdocs:
-  builder: 'local' # Alternatives - 'external'
-  generator:
-    runIn: 'docker' # Alternatives - 'local'
+  builder: 'external' # Alternatives - 'external'
+  # generator:
+  #   runIn: 'docker' # Alternatives - 'local'
   # publisher:
   #   type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
   publisher:
