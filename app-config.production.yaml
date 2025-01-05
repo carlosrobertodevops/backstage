@@ -20,9 +20,6 @@ backend:
     port: 7007
     host: 0.0.0.0
 
-  cache:
-    store: memory
-
   csp:
     connect-src: [ "'self'", "http:", "https:" ]
     # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
