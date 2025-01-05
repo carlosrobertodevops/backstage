@@ -37,6 +37,7 @@ import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
 import { CopilotIndexPage } from '@backstage-community/plugin-copilot';
+// import { ApiExplorerPage } from '@backstage/plugin-api-docs';
 // import githubActionsPlugin from '@backstage-community/plugin-github-actions/alpha';
 // import sonarQubePlugin from '@backstage-community/plugin-sonarqube/alpha';
 

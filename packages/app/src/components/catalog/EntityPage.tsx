@@ -59,7 +59,6 @@ import {
   isKubernetesAvailable,
 } from '@backstage/plugin-kubernetes';
 
-
 import {
   EntityGithubActionsContent,
   isGithubActionsAvailable,
