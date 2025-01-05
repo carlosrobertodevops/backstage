@@ -133,8 +133,9 @@ auth:
       development:
         clientId: ${AUTH_GITHUB_CLIENT_ID}
         clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+        # callbackUrl: ${BASEURL_CALLBACK}
 
-# see https://backstage.io/docs/features/software-templates/configuration for software template options
+        # see https://backstage.io/docs/features/software-templates/configuration for software template options
 scaffolder:
 
 catalog:

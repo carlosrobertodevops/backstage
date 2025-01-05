@@ -12,11 +12,24 @@ backend:
     allow:
     - host: 'gist.githubusercontent.com'
     - host: 'github.com'
+    - host: ${BASEURL_PROD}
   baseUrl: ${BASEURL_PROD} # http://localhost:7007
   # The listener can also be expressed as a single <host>:<port> string. In this case we bind to
   # all interfaces, the most permissive setting. The right value depends on your specific deployment.
   listen:
     port: 7007
+    host: 0.0.0.0
+
+  cache:
+    store: memory
+
+  csp:
+    connect-src: [ "'self'", "http:", "https:" ]
+    # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
+    # Default Helmet Content-Security-Policy values can be removed by setting the key to false
+
+  cors:
+    origin: ${BASEURL_PROD}
 
   # config options: https://node-postgres.com/apis/client
   database:
@@ -91,3 +104,4 @@ auth:
       development:
         clientId: ${AUTH_GITHUB_CLIENT_ID}
         clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+        # callbackUrl: ${BASEURL_PROD_CALLBACK}
