@@ -40,6 +40,7 @@ import { CopilotIndexPage } from '@backstage-community/plugin-copilot';
 import { TechRadarPage } from '@backstage-community/plugin-tech-radar';
 import { DevToolsPage } from '@backstage/plugin-devtools';
 import { customDevToolsPage } from './components/devtools/CustomDevToolsPage';
+import { GraphiQLPage } from '@backstage-community/plugin-graphiql';
 
 const app = createApp({
   apis,
@@ -119,6 +120,7 @@ const routes = (
     </Route>
     <Route path="/tech-radar" element={<TechRadarPage width={1500} height={800} />} />
     <Route path="/copilot" element={<CopilotIndexPage />} />
+    <Route path="/graphiql" element={<GraphiQLPage />} />
   </FlatRoutes>
 );
 

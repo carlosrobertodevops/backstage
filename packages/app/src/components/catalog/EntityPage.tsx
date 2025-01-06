@@ -66,11 +66,6 @@ import {
 
 import { EntitySonarQubeCard } from '@backstage-community/plugin-sonarqube';
 
-import {
-  EntityAWSLambdaOverviewCard,
-  isAWSLambdaAvailable,
-} from '@roadiehq/backstage-plugin-aws-lambda';
-
 const techdocsContent = (
   <EntityTechdocsContent>
     <TechDocsAddons>
