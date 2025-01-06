@@ -37,6 +37,7 @@ import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
 import { CopilotIndexPage } from '@backstage-community/plugin-copilot';
+import { TechRadarPage } from '@backstage-community/plugin-tech-radar';
 // import { ApiExplorerPage } from '@backstage/plugin-api-docs';
 // import githubActionsPlugin from '@backstage-community/plugin-github-actions/alpha';
 // import sonarQubePlugin from '@backstage-community/plugin-sonarqube/alpha';
@@ -114,8 +115,8 @@ const routes = (
     </Route>
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
+    <Route path="/tech-radar" element={<TechRadarPage width={1500} height={800} />} />
     <Route path="/copilot" element={<CopilotIndexPage />} />
-
   </FlatRoutes>
 );
 
