@@ -66,23 +66,6 @@ import {
 
 import { EntitySonarQubeCard } from '@backstage-community/plugin-sonarqube';
 
-import {
-  EntityAWSLambdaOverviewCard,
-  isAWSLambdaAvailable,
-} from '@roadiehq/backstage-plugin-aws-lambda';
-
-import {
-  type DevcontainersConfig,
-  DevcontainersProvider,
-  ExampleDevcontainersComponent,
-} from '@coder/backstage-plugin-devcontainers-react';
-
-// The value of tagName must match the tag value that
-// backstage-plugin-devcontainers-backend is configured with
-const devcontainersConfig: DevcontainersConfig = {
-  tagName: 'devcontainers',
-};
-
 const techdocsContent = (
   <EntityTechdocsContent>
     <TechDocsAddons>
@@ -151,18 +134,7 @@ const entityWarningContent = (
 const overviewContent = (
   <Grid container spacing={3} alignItems="stretch">
     {entityWarningContent}
-    <EntitySwitch>
-      <EntitySwitch.Case if={isAWSLambdaAvailable}>
-        <Grid item md={6}>
-          <EntityAWSLambdaOverviewCard />
-        </Grid>
-      </EntitySwitch.Case>
-    </EntitySwitch>
-    <Grid item md={6} xs={12}>
-      <DevcontainersProvider config={devcontainersConfig}>
-        <ExampleDevcontainersComponent />
-      </DevcontainersProvider>
-    </Grid>
+
     <Grid item md={6}>
       <EntityAboutCard variant="gridItem" />
     </Grid>
