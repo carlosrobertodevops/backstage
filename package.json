@@ -55,6 +55,7 @@
   "packageManager": "yarn@4.4.1",
   "dependencies": {
     "@backstage-community/plugin-copilot": "^0.4.0",
+    "@globallogicuki/backstage-plugin-terraform": "^0.7.1",
     "@roadiehq/backstage-plugin-aws-lambda": "^2.2.13"
   }
 }
