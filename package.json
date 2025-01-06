@@ -54,6 +54,7 @@
   },
   "packageManager": "yarn@4.4.1",
   "dependencies": {
-    "@backstage-community/plugin-copilot": "^0.4.0"
+    "@backstage-community/plugin-copilot": "^0.4.0",
+    "@roadiehq/backstage-plugin-aws-lambda": "^2.2.13"
   }
 }

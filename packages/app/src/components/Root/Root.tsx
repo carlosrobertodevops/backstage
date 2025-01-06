@@ -29,6 +29,8 @@ import { MyGroupsSidebarItem } from '@backstage/plugin-org';
 import GroupIcon from '@material-ui/icons/People';
 import CreateIcon from '@material-ui/icons/Create';
 import { CopilotSidebar } from '@backstage-community/plugin-copilot';
+import BuildIcon from '@material-ui/icons/Build';
+import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 
 const useSidebarLogoStyles = makeStyles({
   root: {
@@ -76,12 +78,13 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
         />
         <SidebarItem icon={ExtensionIcon} to="api-docs" text="APIs" />
         <SidebarItem icon={LibraryBooks} to="docs" text="Docs" />
-
         <SidebarItem icon={CreateIcon} to="create" text="Create..." />
         <SidebarItem icon={CreateComponentIcon} to="catalog-import" text="Register..." />
          {/* <SidebarItem icon={CreateComponentIcon} to="create" text="Create..." /> */}
         {/* End global nav */}
         <SidebarDivider />
+        <SidebarItem icon={BuildIcon} to="devtools" text="DevTools" />
+        <SidebarItem icon={TrackChangesIcon} to="tech-radar" text="Tech Radar" />
         <SidebarScrollWrapper>
           {/* Items in this group will be scrollable if they run out of space */}
           <CopilotSidebar />
