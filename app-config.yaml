@@ -19,7 +19,7 @@ backend:
   baseUrl: ${BASEURL_LOCAL}:${PORT_BACKEND} # http://localhost:7007
   listen:
     port: ${PORT_BACKEND}
-    # host: 0.0.0.0
+    host: 0.0.0.0
     # Uncomment the following host directive to bind to specific interfaces
     # host: 127.0.0.1
   csp:
