@@ -37,6 +37,7 @@ backend:
       user: ${POSTGRES_USER}
       password: ${POSTGRES_PASSWORD}
       database: ${POSTGRES_DATABASE}
+
   cache:
     store: memory
 
