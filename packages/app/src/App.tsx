@@ -40,9 +40,6 @@ import { CopilotIndexPage } from '@backstage-community/plugin-copilot';
 import { TechRadarPage } from '@backstage-community/plugin-tech-radar';
 import { DevToolsPage } from '@backstage/plugin-devtools';
 import { customDevToolsPage } from './components/devtools/CustomDevToolsPage';
-// import { ApiExplorerPage } from '@backstage/plugin-api-docs';
-// import githubActionsPlugin from '@backstage-community/plugin-github-actions/alpha';
-// import sonarQubePlugin from '@backstage-community/plugin-sonarqube/alpha';
 
 const app = createApp({
   apis,

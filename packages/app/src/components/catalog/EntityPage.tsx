@@ -66,6 +66,11 @@ import {
 
 import { EntitySonarQubeCard } from '@backstage-community/plugin-sonarqube';
 
+import {
+  EntityAWSLambdaOverviewCard,
+  isAWSLambdaAvailable,
+} from '@roadiehq/backstage-plugin-aws-lambda';
+
 const techdocsContent = (
   <EntityTechdocsContent>
     <TechDocsAddons>
@@ -134,7 +139,6 @@ const entityWarningContent = (
 const overviewContent = (
   <Grid container spacing={3} alignItems="stretch">
     {entityWarningContent}
-
     <Grid item md={6}>
       <EntityAboutCard variant="gridItem" />
     </Grid>
@@ -152,6 +156,7 @@ const overviewContent = (
     </Grid>
   </Grid>
 );
+
 
 const serviceEntityPage = (
   <EntityLayout>
