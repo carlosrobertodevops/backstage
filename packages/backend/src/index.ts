@@ -82,11 +82,11 @@ const customAuthResolver = createBackendModule({
           // based providers rather than an OAuth based one
           factory: createOAuthProviderFactory({
             authenticator: githubAuthenticator,
-
             async signInResolver(info, ctx) {
               console.log('carlos.roberto.devops');
               console.log('info:', info);
               const { profile: { email } } = info;
+              // const { profile: { picture } } = info;
               // Profiles are not always guaranteed to to have an email address.
               // You can also find more provider-specific information in `info.result`.
               // It typically contains a `fullProfile` object as well as ID and/or access

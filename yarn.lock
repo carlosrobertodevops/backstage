@@ -13885,6 +13885,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "app@workspace:packages/app"
   dependencies:
+    "@backstage-community/plugin-copilot": "npm:^0.4.0"
     "@backstage-community/plugin-github-actions": "npm:^0.7.0"
     "@backstage-community/plugin-sonarqube": "npm:^0.9.0"
     "@backstage/app-defaults": "npm:^1.5.15"
