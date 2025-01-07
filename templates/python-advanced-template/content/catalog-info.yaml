@@ -1,8 +1,13 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{ values.name | dump }}
+  name: python-advanced-template
+  description: Template avançado para projetos Python.
+  tags:
+  - python
+  - scaffolder
 spec:
-  type: service
-  owner: user:guest
+  type: template
+  owner: carlos
+  path: ./templates/python-advanced-template/template.yaml
   lifecycle: experimental
