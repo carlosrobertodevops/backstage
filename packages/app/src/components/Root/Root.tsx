@@ -30,7 +30,7 @@ import GroupIcon from '@material-ui/icons/People';
 import CreateIcon from '@material-ui/icons/Create';
 import { CopilotSidebar } from '@backstage-community/plugin-copilot';
 import BuildIcon from '@material-ui/icons/Build';
-import TrackChangesIcon from '@mui/icons-material/TrackChanges';
+import GpsFixedIcon from '@mui/icons-material/GpsFixed';
 
 const useSidebarLogoStyles = makeStyles({
   root: {
@@ -84,7 +84,7 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
         {/* End global nav */}
         <SidebarDivider />
         <SidebarItem icon={BuildIcon} to="devtools" text="DevTools" />
-        <SidebarItem icon={TrackChangesIcon} to="tech-radar" text="Tech Radar" />
+        <SidebarItem icon={GpsFixedIcon} to="tech-radar" text="Tech Radar" />
         <SidebarScrollWrapper>
           {/* Items in this group will be scrollable if they run out of space */}
           <CopilotSidebar />
