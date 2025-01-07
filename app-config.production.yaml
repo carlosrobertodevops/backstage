@@ -18,7 +18,7 @@ backend:
   # all interfaces, the most permissive setting. The right value depends on your specific deployment.
   listen:
     port: ${PORT_BACKEND}
-    # host: 0.0.0.0
+    host: 0.0.0.0
 
   csp:
     connect-src: [ "'self'", "http:", "https:" ]
