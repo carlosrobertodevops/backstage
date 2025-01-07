@@ -9,5 +9,5 @@ metadata:
 spec:
   type: template
   owner: user:carlos
-  path: ./templates/python-advanced-template/template.yaml
+  # path: ./templates/python-advanced-template/template.yaml
   lifecycle: experimental
