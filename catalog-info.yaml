@@ -25,7 +25,6 @@ spec:
   owner: user:carlos
   path: ./templates/python-advanced-template/template.yaml
   lifecycle: experimental
-
 # ---
 # apiVersion: backstage.io/v1alpha1
 # kind: Component
