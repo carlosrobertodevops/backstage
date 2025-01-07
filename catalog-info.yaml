@@ -22,7 +22,7 @@ metadata:
   - scaffolder
 spec:
   type: template
-  owner: carlosrobertodevops
+  owner: carlos
   path: ./templates/python-advanced-template/template.yaml
   lifecycle: experimental
 
