@@ -4,3 +4,11 @@ export $(grep -v '^#' .env | xargs)
 
 # Enviar o token como secret para o repositório do GitHub
 gh secret set PERSONAL_ACCESS_TOKEN --body "$PERSONAL_ACCESS_TOKEN"
+# gh secret set GITHUB_TOKEN --body "$GITHUB_TOKEN"
+# gh secret set GITHUB_USERNAME --body "$GITHUB_USERNAME"
+# gh secret set GITHUB_EMAIL --body "$GITHUB_EMAIL"
+# gh secret set GITHUB_NAME --body "$GITHUB_NAME"
+# gh secret set GITHUB_COMPANY --body "$GITHUB_COMPANY"
+# gh secret set GITHUB_LOCATION --body "$GITHUB_LOCATION"
+# gh secret set GITHUB_BIO --body "$GITHUB_BIO"
+# gh secret set GITHUB_BLOG --body "$GITHUB_BLOG"
