@@ -50,9 +50,8 @@ spec:
           source venv/bin/activate
           pip install -r requirements.txt
           pip install poetry
-					poetry install
-					poetry run flask run
-
+	  poetry install
+          poetry run flask run
     - id: ci-cd
       name: Configurar CI/CD
       action: execute:script
