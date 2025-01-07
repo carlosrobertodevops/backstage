@@ -8,7 +8,7 @@ metadata:
     - python
     - advanced
 spec:
-  owner: your-org/engineering
+  owner: carlos
   type: service
   parameters:
     - title: Informações do Projeto
@@ -36,6 +36,7 @@ spec:
       input:
         url: ./python-advanced-template
         targetPath: .
+
     - id: setup
       name: Instalar Dependências
       action: execute:script
@@ -45,13 +46,13 @@ spec:
           source venv/bin/activate
           pip install -r requirements.txt
 
-		# - id: setup
-		# 	name: Inicializar Projeto com Poetry
-		# 	action: execute:script
-		# 	input:
-		# 		script: |
-		# 			poetry install
-		# 			poetry run flask run
+		- id: setup
+			name: Inicializar Projeto com Poetry
+			action: execute:script
+			input:
+				script: |
+					poetry install
+					poetry run flask run
 
     - id: ci-cd
       name: Configurar CI/CD
