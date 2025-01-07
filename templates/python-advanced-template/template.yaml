@@ -1,0 +1,72 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: python-advanced-template
+  title: Advanced Python Project
+  description: Template para criar um projeto Python completo com linters, CI/CD, e Docker.
+  tags:
+    - python
+    - advanced
+spec:
+  owner: your-org/engineering
+  type: service
+  parameters:
+    - title: Informações do Projeto
+      properties:
+        name:
+          title: Nome do Projeto
+          type: string
+          description: Nome do projeto Python.
+        description:
+          title: Descrição
+          type: string
+          description: Breve descrição do projeto.
+        repoUrl:
+          title: URL do Repositório
+          type: string
+          description: URL do repositório onde o projeto será armazenado.
+        useDocker:
+          title: Usar Docker?
+          type: boolean
+          description: Se verdadeiro, inclui o suporte ao Docker.
+  steps:
+    - id: fetch
+      name: Criar Estrutura do Projeto
+      action: fetch:template
+      input:
+        url: ./python-advanced-template
+        targetPath: .
+    - id: setup
+      name: Instalar Dependências
+      action: execute:script
+      input:
+        script: |
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
+
+		# - id: setup
+		# 	name: Inicializar Projeto com Poetry
+		# 	action: execute:script
+		# 	input:
+		# 		script: |
+		# 			poetry install
+		# 			poetry run flask run
+
+    - id: ci-cd
+      name: Configurar CI/CD
+      action: execute:script
+      input:
+        script: |
+          echo "Configuração do CI concluída"
+    - id: publish
+      name: Publicar no GitHub
+      action: publish:github
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        defaultBranch: main
+        sourcePath: .
+  output:
+    links:
+      - title: Repositório
+        url: ${{ steps.publish.output.remoteUrl }}

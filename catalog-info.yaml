@@ -11,6 +11,20 @@ spec:
   type: website
   owner: john@example.com
   lifecycle: experimental
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: python-advanced-template
+  description: Template avançado para projetos Python.
+  tags:
+  - python
+  - scaffolder
+spec:
+  type: template
+  owner: carlosrobertodevops
+  path: ./templates/python-advanced-template/template.yaml
+  lifecycle: experimental
 
 # ---
 # apiVersion: backstage.io/v1alpha1

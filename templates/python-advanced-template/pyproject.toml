@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "{{ name }}"
+version = "0.1.0"
+description = "{{ description }}"
+authors = ["Seu Nome <seuemail@exemplo.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+flask = "^2.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.4"
+flake8 = "^6.1"
+black = "^23.9"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
