@@ -3,6 +3,9 @@ kind: Component
 metadata:
   name: backstage
   description: An example of a Backstage application.
+  tags:
+  - node
+  - scaffolder
   # Example for optional annotations
   annotations:
     github.com/project-slug: backstage/backstage
@@ -20,21 +23,11 @@ metadata:
   tags:
   - python
   - scaffolder
+  annotations:
+    github.com/project-slug: backstage/backstage
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: template
   owner: user:carlos
   path: ./templates/python-advanced-template/template.yaml
   lifecycle: experimental
-# ---
-# apiVersion: backstage.io/v1alpha1
-# kind: Component
-# metadata:
-#   name: backstage
-#   description: |
-#     Backstage is an open-source developer portal that puts the developer experience first.
-#   annotations:
-#     sonarqube.org/project-key: ${SONARQUBE_TOKEN} #YOUR_INSTANCE_NAME/YOUR_PROJECT_KEY
-# spec:
-#   type: library
-#   owner: CNCF
-#   lifecycle: experimental
