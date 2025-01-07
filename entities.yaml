@@ -58,7 +58,7 @@ spec:
   type: template
   lifecycle: experimental
   owner: user:carlos
-  system: templates
+  system: python
   providesApis: []
 ---
 
