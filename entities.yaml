@@ -11,13 +11,16 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: example-website
+  name: python-advanced-template
+  description: Template avançado para projetos Python.
+  tags:
+  - python
+  - scaffolder
 spec:
-  type: website
+  type: template
+  owner: user:carlos
+  path: ./templates/python-advanced-template/template.yaml
   lifecycle: experimental
-  owner: devops
-  system: examples
-  providesApis: [ example-grpc-api ]
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
 apiVersion: backstage.io/v1alpha1
@@ -39,3 +42,24 @@ spec:
     message ExampleMessage {
       string example = 1;
     };
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: python
+spec:
+  owner: devops
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: example-website
+spec:
+  type: template
+  lifecycle: experimental
+  owner: user:carlos
+  system: templates
+  providesApis: []
+---
+
+
