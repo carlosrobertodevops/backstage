@@ -123,15 +123,17 @@ techdocs:
 #     # See https://backstage.io/docs/auth/guest/provider
 #     guest: {}
 auth:
-  # environment: development
   environment: production
   providers:
-    # guest: {}
     github:
       development:
-        clientId: ${AUTH_GITHUB_CLIENT_ID}
-        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
-        # see https://backstage.io/docs/features/software-templates/configuration for software template options
+        clientId: ${AUTH_GITHUB_CLIENT_ID_DEV}
+        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET_DEV}
+      production:
+        clientId: ${AUTH_GITHUB_CLIENT_ID_PRD}
+        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET_PRD}
+
+# see https://backstage.io/docs/features/software-templates/configuration for software template options
 scaffolder:
 
 catalog:
