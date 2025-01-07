@@ -8,6 +8,6 @@ metadata:
   - scaffolder
 spec:
   type: template
-  owner: carlos
+  owner: user:carlos
   path: ./templates/python-advanced-template/template.yaml
   lifecycle: experimental
