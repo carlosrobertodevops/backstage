@@ -40,7 +40,7 @@ spec:
       action: fetch:template
       input:
         url: ./content
-        # cookiecutterCompat: true
+        cookiecutterCompat: true
         values:
           name: ${{ parameters.name }}
 
@@ -52,9 +52,9 @@ spec:
           python3 -m venv venv
           source venv/bin/activate
           pip install -r requirements.txt
-          pip install poetry
-          poetry install
-          poetry run flask run
+          # pip install poetry
+          # poetry install
+          # poetry run flask run
     - id: ci-cd
       name: Configurar CI/CD
       action: execute:script
