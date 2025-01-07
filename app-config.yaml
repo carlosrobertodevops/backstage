@@ -123,7 +123,7 @@ techdocs:
 #     # See https://backstage.io/docs/auth/guest/provider
 #     guest: {}
 auth:
-  environment: production
+  environment: development
   providers:
     github:
       development:
