@@ -19,7 +19,7 @@ backend:
   baseUrl: ${BASEURL_LOCAL}:${PORT_BACKEND} # http://localhost:7007
   listen:
     port: ${PORT_BACKEND}
-    # host: 0.0.0.0
+    host: 0.0.0.0
     # Uncomment the following host directive to bind to specific interfaces
     # host: 127.0.0.1
   csp:
@@ -131,8 +131,6 @@ auth:
       development:
         clientId: ${AUTH_GITHUB_CLIENT_ID}
         clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
-        # callbackUrl: ${BASEURL_CALLBACK}
-
         # see https://backstage.io/docs/features/software-templates/configuration for software template options
 scaffolder:
 

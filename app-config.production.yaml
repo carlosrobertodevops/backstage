@@ -17,8 +17,8 @@ backend:
   # The listener can also be expressed as a single <host>:<port> string. In this case we bind to
   # all interfaces, the most permissive setting. The right value depends on your specific deployment.
   listen:
-    port: 7007
-    # host: 0.0.0.0
+    port: ${PORT_BACKEND}
+    host: 0.0.0.0
 
   csp:
     connect-src: [ "'self'", "http:", "https:" ]
@@ -104,4 +104,3 @@ auth:
       development:
         clientId: ${AUTH_GITHUB_CLIENT_ID}
         clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
-        # callbackUrl: ${BASEURL_PROD_CALLBACK}
