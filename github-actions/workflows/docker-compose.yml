@@ -1,0 +1,45 @@
+name: Docker Compose Deployment
+
+on:
+  push:
+    branches:
+      - main # Monitora o branch principal
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout do código
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Validar o arquivo docker-compose.yaml
+      - name: Validate docker-compose.yaml
+        run: |
+          docker-compose -f docker-compose.yaml config
+
+      # Login no Docker Hub
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Construir e enviar imagens para o Docker Hub (se necessário)
+      - name: Build and Push Docker Images
+        run: |
+          docker-compose -f docker-compose.yaml build
+          docker-compose -f docker-compose.yaml push
+
+      # # Executar o docker-compose no servidor remoto
+      # - name: Deploy to Remote Server
+      #   uses: appleboy/ssh-action@v0.1.7
+
+      #   with:
+      #     host: ${{ secrets.REMOTE_HOST }}
+      #     username: ${{ secrets.REMOTE_USER }}
+      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     script: |
+      #       cd /caminho/para/projeto
+      #       docker-compose pull
+      #       docker-compose up -d

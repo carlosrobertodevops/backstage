@@ -1,0 +1,7 @@
+#!/bin/bash
+# Verifica se o docker-compose.yaml é válido antes do push
+docker-compose config > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+  echo "Erro: O arquivo docker-compose.yaml é inválido."
+  exit 1
+fi

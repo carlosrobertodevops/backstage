@@ -18,7 +18,6 @@ services:
       - backstage_network
 
   backstage:
-    # image: carlosrobertodevops/backstage:1.0.2
     build:
       context: .
       dockerfile: Dockerfile
