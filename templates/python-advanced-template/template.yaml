@@ -34,12 +34,15 @@ spec:
           type: boolean
           description: Se verdadeiro, inclui o suporte ao Docker.
   steps:
-    - id: fetch
+
+    - id: fetch-base
       name: Criar Estrutura do Projeto
       action: fetch:template
       input:
-        url: ./python-advanced-template
-        targetPath: .
+        url: ./content
+        # cookiecutterCompat: true
+        values:
+          name: ${{ parameters.name }}
 
     - id: setup
       name: Instalar Dependências
