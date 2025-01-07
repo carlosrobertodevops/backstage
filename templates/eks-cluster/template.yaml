@@ -6,6 +6,11 @@ metadata:
   name: eks-cluster
   title: Node.js App on AWS EKS Cluster
   description: Deploy a Node.js App on AWS EKS Cluster using Terraform
+  tags:
+    - terraform
+    - eks
+    - aws
+    - node
 # The specification for how the template behaves
 spec:
   # Who owns this template. Generally, it could be a team or individual

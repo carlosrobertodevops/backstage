@@ -12,6 +12,10 @@ spec:
   type: service
   parameters:
     - title: Informações do Projeto
+      required:
+        - name
+        - description
+        - repoUrl
       properties:
         name:
           title: Nome do Projeto
@@ -45,12 +49,7 @@ spec:
           python3 -m venv venv
           source venv/bin/activate
           pip install -r requirements.txt
-
-		- id: setup
-			name: Inicializar Projeto com Poetry
-			action: execute:script
-			input:
-				script: |
+          pip install poetry
 					poetry install
 					poetry run flask run
 
