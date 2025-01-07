@@ -34,7 +34,6 @@ spec:
           type: boolean
           description: Se verdadeiro, inclui o suporte ao Docker.
   steps:
-
     - id: fetch-base
       name: Criar Estrutura do Projeto
       action: fetch:template
@@ -51,26 +50,32 @@ spec:
           python3 -m venv venv
           source venv/bin/activate
           pip install -r requirements.txt
-          pip install poetry
-          poetry install
-          poetry run flask run
     - id: ci-cd
       name: Configurar CI/CD
       action: execute:script
       input:
         script: |
           echo "Configuração do CI concluída"
+    # This step publishes the contents of the working directory to GitHub.
     - id: publish
-      name: Publicar no GitHub
+      name: Publish
       action: publish:github
       input:
+        allowedHosts: [ 'github.com' ]
+        description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
-        defaultBranch: main
-        sourcePath: .
+  
+    # The final step is to register our new component in the catalog.
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
   output:
     links:
-      - title: Repositório
-        url: ${{ steps.publish.output.remoteUrl }}
-      - title: Open in catalog
-        icon: catalog
-        entityRef: ${{ steps['register'].output.entityRef }}
+    - title: Repository
+      url: ${{ steps['publish'].output.remoteUrl }}
+    - title: Open in catalog
+      icon: catalog
+      entityRef: ${{ steps['register'].output.entityRef }}
