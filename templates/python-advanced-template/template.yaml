@@ -48,6 +48,7 @@ spec:
         url: ./content
         values:
           name: ${{ parameters.name }}
+          description: ${{ parameters.description }}
     steps:
   # Each step executes an action, in this case one templates files into the working directory.
     # - id: setup
