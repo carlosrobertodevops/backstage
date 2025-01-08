@@ -11,15 +11,19 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: python-advanced-template
-  description: Template avançado para projetos Python.
+  name: backstage
+  description: An example of a Backstage application.
   tags:
-  - python
+  - node
+  - javascript
   - scaffolder
+  # Example for optional annotations
+  annotations:
+    github.com/project-slug: backstage/backstage
+    backstage.io/techdocs-ref: dir:.
 spec:
-  type: template
-  owner: user:carlos
-  path: ./templates/python-advanced-template/template.yaml
+  type: website
+  owner: john@example.com
   lifecycle: experimental
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
@@ -44,13 +48,6 @@ spec:
     };
 ---
 apiVersion: backstage.io/v1alpha1
-kind: System
-metadata:
-  name: system
-spec:
-  owner: devops
----
-apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: example-website
@@ -63,5 +60,25 @@ spec:
   system: python
   providesApis: []
 ---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: devops
+spec:
+  owner: devops
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: python-advanced-template
+  description: Template avançado para projetos Python.
+  tags:
+  - python
+  - scaffolder
+spec:
+  type: template
+  owner: user:carlos
+  path: ./templates/python-advanced-template/template.yaml
+  lifecycle: experimental
 
 
