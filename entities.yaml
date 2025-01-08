@@ -63,6 +63,10 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: example-website
+  tags:
+    - node
+    - javascript
+    - scaffolder
 spec:
   type: template
   lifecycle: experimental
