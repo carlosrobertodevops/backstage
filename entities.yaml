@@ -14,9 +14,9 @@ metadata:
   name: backstage
   description: An example of a Backstage application.
   tags:
-  - node
-  - javascript
-  - scaffolder
+    - node
+    - javascript
+    - scaffolder
   # Example for optional annotations
   annotations:
     github.com/project-slug: backstage/backstage
@@ -73,8 +73,8 @@ metadata:
   name: python-advanced-template
   description: Template avançado para projetos Python.
   tags:
-  - python
-  - scaffolder
+    - python
+    - scaffolder
 spec:
   type: template
   owner: user:carlos
