@@ -51,13 +51,11 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: example-website
-  tags:
-    - Nodejs
 spec:
   type: template
   lifecycle: experimental
   owner: user:carlos
-  system: python
+  system: system
   providesApis: []
 ---
 apiVersion: backstage.io/v1alpha1
@@ -78,6 +76,7 @@ metadata:
 spec:
   type: template
   owner: user:carlos
+  system: devops
   path: ./templates/python-advanced-template/template.yaml
   lifecycle: experimental
 
