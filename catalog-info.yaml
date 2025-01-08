@@ -13,7 +13,7 @@ metadata:
     backstage.io/techdocs-ref: dir:.
 spec:
   type: website
-  owner: john@example.com
+  owner: user:guest
   lifecycle: experimental
 ---
 apiVersion: backstage.io/v1alpha1
