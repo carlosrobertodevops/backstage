@@ -26,16 +26,16 @@ spec:
           type: string
           description: Breve descrição do projeto
         repoUrl:
-          title: Repository Location
+          title: Nome do Repositório
           type: string
           ui:field: RepoUrlPicker
           ui:options:
             allowedHosts:
             - github.com
-        repoName:
-          title: Nome do Repositório
-          type: string
-          description: Nome do repositório onde o projeto será armazenado.
+        # repoName:
+        #   title: Nome do Repositório
+        #   type: string
+        #   description: Nome do repositório onde o projeto será armazenado.
         useDocker:
           title: Usar Docker?
           type: boolean
