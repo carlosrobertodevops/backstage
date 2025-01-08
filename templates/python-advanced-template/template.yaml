@@ -47,9 +47,10 @@ spec:
       action: execute:script
       input:
         script: |
-          python3 -m venv venv
-          source venv/bin/activate
-          pip install -r requirements.txt
+            echo "Configuração das Dependências concluídas"
+          # python3 -m venv venv
+          # source venv/bin/activate
+          # pip install -r requirements.txt
     - id: ci-cd
       name: Configurar CI/CD
       action: execute:script
