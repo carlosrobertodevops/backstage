@@ -5,7 +5,7 @@ kind: System
 metadata:
   name: examples
 spec:
-  owner: devops
+  owner: guests
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-system
 apiVersion: backstage.io/v1alpha1
@@ -22,6 +22,14 @@ metadata:
   name: devops
 spec:
   owner: devops
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-system
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: default
+spec:
+  owner: default
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-system
 apiVersion: backstage.io/v1alpha1
@@ -48,6 +56,7 @@ metadata:
 spec:
   type: website
   owner: john@example.com
+  system: default
   lifecycle: experimental
 ---
 apiVersion: backstage.io/v1alpha1
@@ -57,7 +66,7 @@ metadata:
 spec:
   type: template
   lifecycle: experimental
-  owner: guest/guests
+  owner: user:guest
   system: system
   providesApis: []
 ---
