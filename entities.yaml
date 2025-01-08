@@ -30,7 +30,7 @@ metadata:
 spec:
   type: grpc
   lifecycle: experimental
-  owner: devops
+  owner: guest/guests
   system: examples
   definition: |
     syntax = "proto3";
@@ -46,7 +46,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
-  name: python
+  name: system
 spec:
   owner: devops
 ---
@@ -54,6 +54,8 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: example-website
+  tags:
+    - Nodejs
 spec:
   type: template
   lifecycle: experimental
