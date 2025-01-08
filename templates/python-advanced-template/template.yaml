@@ -32,10 +32,6 @@ spec:
           ui:options:
             allowedHosts:
             - github.com
-        # repoName:
-        #   title: Nome do Repositório
-        #   type: string
-        #   description: Nome do repositório onde o projeto será armazenado.
         useDocker:
           title: Usar Docker?
           type: boolean
@@ -48,7 +44,7 @@ spec:
         url: ./content
         values:
           name: ${{ parameters.name }}
-          description: ${{ parameters.description }}
+          # description: ${{ parameters.description }}
     steps:
   # Each step executes an action, in this case one templates files into the working directory.
     # - id: setup
