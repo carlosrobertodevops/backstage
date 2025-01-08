@@ -5,6 +5,10 @@ metadata:
   name: example-nodejs-template
   title: Example Node.js Template
   description: An example template for the scaffolder that creates a simple Node.js service
+  tags:
+  - node
+  - javascript
+  - scaffolder
 spec:
   owner: user:guest
   type: service
