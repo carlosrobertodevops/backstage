@@ -24,11 +24,18 @@ spec:
         description:
           title: Descrição
           type: string
-          description: Breve descrição do projeto.
+          description: Breve descrição do projeto
         repoUrl:
-          title: URL do Repositório
+          title: Repository Location
           type: string
-          description: URL do repositório onde o projeto será armazenado.
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+            - github.com
+        repoName:
+          title: Nome do Repositório
+          type: string
+          description: Nome do repositório onde o projeto será armazenado.
         useDocker:
           title: Usar Docker?
           type: boolean
@@ -39,24 +46,24 @@ spec:
       action: fetch:template
       input:
         url: ./content
-        cookiecutterCompat: true
+        # cookiecutterCompat: true
         values:
           name: ${{ parameters.name }}
-    - id: setup
-      name: Instalar Dependências
-      action: execute:script
-      input:
-        script: |
-            echo "Configuração das Dependências concluídas"
-          # python3 -m venv venv
-          # source venv/bin/activate
-          # pip install -r requirements.txt
-    - id: ci-cd
-      name: Configurar CI/CD
-      action: execute:script
-      input:
-        script: |
-          echo "Configuração do CI concluída"
+    # - id: setup
+    #   name: Instalar Dependências
+    #   action: execute:script
+    #   input:
+    #     script: |
+    #         echo "Configuração das Dependências concluídas"
+    #       # python3 -m venv venv
+    #       # source venv/bin/activate
+    #       # pip install -r requirements.txt
+    # - id: ci-cd
+    #   name: Configurar CI/CD
+    #   action: execute:script
+    #   input:
+    #     script: |
+    #       echo "Configuração do CI concluída"
     # This step publishes the contents of the working directory to GitHub.
     - id: publish
       name: Publish
