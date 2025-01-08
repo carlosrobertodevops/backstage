@@ -5,6 +5,7 @@ metadata:
   description: An example of a Backstage application.
   tags:
   - node
+  - javascript
   - scaffolder
   # Example for optional annotations
   annotations:
