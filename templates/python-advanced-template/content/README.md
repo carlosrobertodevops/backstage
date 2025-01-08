@@ -1,7 +1,7 @@
 
 # ${{ values.name }}
 
-{{ description }}
+${{ values.description }}
 
 ## Como executar
 
