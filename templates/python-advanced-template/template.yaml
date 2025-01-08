@@ -46,9 +46,10 @@ spec:
       action: fetch:template
       input:
         url: ./content
-        # cookiecutterCompat: true
         values:
           name: ${{ parameters.name }}
+    steps:
+  # Each step executes an action, in this case one templates files into the working directory.
     # - id: setup
     #   name: Instalar Dependências
     #   action: execute:script
@@ -65,6 +66,7 @@ spec:
     #     script: |
     #       echo "Configuração do CI concluída"
     # This step publishes the contents of the working directory to GitHub.
+  # This step publishes the contents of the working directory to GitHub.
     - id: publish
       name: Publish
       action: publish:github
@@ -80,10 +82,11 @@ spec:
       input:
         repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
         catalogInfoPath: '/catalog-info.yaml'
-  output:
-    links:
-    - title: Repository
-      url: ${{ steps['publish'].output.remoteUrl }}
-    - title: Open in catalog
-      icon: catalog
-      entityRef: ${{ steps['register'].output.entityRef }}
+    # Outputs are displayed to the user after a successful execution of the template.
+    output:
+      links:
+      - title: Repository
+        url: ${{ steps['publish'].output.remoteUrl }}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}
