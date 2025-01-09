@@ -54,7 +54,8 @@ spec:
         url: ./content
         values:
           name: ${{ parameters.name }}
-          # description: ${{ parameters.description }}
+          description: ${{ parameters.description }}
+          owner: ${{ parameters.owner }}
     steps:
   # Each step executes an action, in this case one templates files into the working directory.
     # - id: setup
