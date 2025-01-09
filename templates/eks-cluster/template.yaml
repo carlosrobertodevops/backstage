@@ -41,8 +41,7 @@ spec:
 
     # Ask the user where they want to store the code
     - title: Choose a Repo location
-      required:
-        - repoUrl
+      required: [repoUrl]
       properties:
         repoUrl:
           title: Repository Location
@@ -84,6 +83,7 @@ spec:
         url: ./content  # Where the base content is stored
         values:
           name: ${{ parameters.name }}
+          owner: ${{ parameters.owner }}
     # Publish the code to a GitHub repo
     - id: publish
       name: Publish
