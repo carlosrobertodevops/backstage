@@ -18,11 +18,18 @@ spec:
           title: Nome do Projeto
           type: string
           description: Nome do projeto Python.
+          default: 'app-python-adv-backstage-template'
+          maxLength: 50
+          pattern: '^[a-zA-Z0-9\-]*$'
           ui:autofocus: true
+
         description:
           title: Descrição
           type: string
           description: Breve descrição do projeto
+          ui:options:
+            rows: 5  # Number of rows in the input area
+
         owner:
           title: Proprietário(s)
           type: string
@@ -31,6 +38,7 @@ spec:
           ui:options:
             catalogFilter:
               kind: Group
+
     - title: Escolha o local do projeto
       required: [repoUrl]
       properties:
@@ -42,6 +50,7 @@ spec:
             allowedHosts:
               - github.com
           ui:autofocus: true
+
         useDocker:
           title: Usar Docker?
           type: boolean

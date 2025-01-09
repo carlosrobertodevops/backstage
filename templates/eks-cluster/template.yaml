@@ -24,12 +24,22 @@ spec:
       required: [name, owner]
       properties:
         name:
-          title: App Name
+          title: Nome do Clsuter EKS
           type: string
           description: Unique name for your app
           ui:autofocus: true  # This field gets auto-focused in UI
+          default: 'eks-cluster-backstage-template'
+          maxLength: 50
+          pattern: '^[a-zA-Z0-9\-]*$'
+          ui:autofocus: true
+
+        description:
+          title: Descrição
+          type: string
+          description: Breve descrição do projeto
           ui:options:
             rows: 5  # Number of rows in the input area
+
         owner:
           title: Owner
           type: string
@@ -50,6 +60,7 @@ spec:
           ui:options:
             allowedHosts:
               - github.com  # Allowed hosts for repository
+
     # Parameters for setting up the EKS cluster
     - title: Basic EKS Cluster Configuration
       required: [clusterName, region, action]
@@ -90,7 +101,9 @@ spec:
       action: publish:github
       input:
         allowedHosts: ['github.com']
+        nome: ${{ parameters.name }}
         description: This is ${{ parameters.name }}
+        owner: ${{ parameters.owner }}
         repoUrl: ${{ parameters.repoUrl }}
     # Trigger a GitHub Action to set up the EKS cluster
     - id: github-action
