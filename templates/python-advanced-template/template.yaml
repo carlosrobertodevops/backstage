@@ -38,7 +38,8 @@ spec:
           type: string
           ui:field: RepoUrlPicker
           ui:options:
-            allowedHosts: [github.com]
+            allowedHosts:
+              - github.com
         useDocker:
           title: Usar Docker?
           type: boolean
