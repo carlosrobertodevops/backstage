@@ -12,10 +12,7 @@ spec:
   type: service
   parameters:
     - title: Informações do Projeto
-      required:
-        - name
-        - description
-        - repoUrl
+      required: [name, description, owner]
       properties:
         name:
           title: Nome do Projeto
@@ -33,7 +30,9 @@ spec:
           ui:options:
             catalogFilter:
               kind: Group
-  - title: Escolha o local do projeto
+    - title: Escolha o local do projeto
+      required: [name, description, repoUrl]
+      properties:
         repoUrl:
           title: Nome do Repositório
           type: string
