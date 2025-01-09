@@ -90,8 +90,6 @@ spec:
     # Outputs are displayed to the user after a successful execution of the template.
     output:
       links:
-      - title: Owner
-        url: ${{ parameters.owner }}
       - title: Repository
         url: ${{ steps['publish'].output.remoteUrl }}
       - title: Open in catalog
