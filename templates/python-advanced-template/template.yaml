@@ -25,6 +25,13 @@ spec:
           title: Descrição
           type: string
           description: Breve descrição do projeto
+        owner:
+          title: Proprietário(s)
+          type: string
+          description: Equipe responsável pelo projeto
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKids: [Group]
         repoUrl:
           title: Nome do Repositório
           type: string
@@ -71,7 +78,7 @@ spec:
         allowedHosts: [ 'github.com' ]
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
-  
+
     # The final step is to register our new component in the catalog.
     - id: register
       name: Register
@@ -79,9 +86,12 @@ spec:
       input:
         repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
         catalogInfoPath: '/catalog-info.yaml'
+
     # Outputs are displayed to the user after a successful execution of the template.
     output:
       links:
+      - title: Owner
+        url: ${{ parameters.owner }}
       - title: Repository
         url: ${{ steps['publish'].output.remoteUrl }}
       - title: Open in catalog
