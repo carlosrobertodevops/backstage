@@ -111,7 +111,7 @@ spec:
       input:
         repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
         annotations:
-          github.com/project-slug: $({ parameters.destination.owner }}/{ parameters.destination.repo}}
+          github.com/project-slug: ${{ parameters.destination.owner }}/${{ parameters.destination.repo }}
         catalogInfoPath: '/catalog-info.yaml'  # Where the catalog info is stored
   # Output links to the user after the template execution
   output:

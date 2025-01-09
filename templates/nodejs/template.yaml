@@ -62,6 +62,7 @@ spec:
     input:
       repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
       catalogInfoPath: '/catalog-info.yaml'
+      github.com/project-slug: ${{ parameters.destination.owner }}/${{ parameters.destination.repo }}
   # Outputs are displayed to the user after a successful execution of the template.
   output:
     links:
