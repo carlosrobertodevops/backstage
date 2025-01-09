@@ -102,6 +102,8 @@ spec:
         catalogInfoPath: '/catalog-info.yaml'  # Where the catalog info is stored
 
   output:
+    remoteUrl: ${{ steps.publish.output.remoteUrl }}
+    entityRef: ${{ steps.register.output.entityRef }}
     links:
       - title: Repositório Lambda
         url: ${{steps.publish_lambda.output.remoteUrl}}
