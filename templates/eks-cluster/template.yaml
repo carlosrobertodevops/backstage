@@ -7,9 +7,9 @@ metadata:
   title: Node.js App on AWS EKS Cluster
   description: Deploy a Node.js App on AWS EKS Cluster using Terraform
   tags:
+    - aws
     - terraform
     - eks
-    - aws
     - node
 # The specification for how the template behaves
 spec:
@@ -21,8 +21,7 @@ spec:
   parameters:
     # Ask the user to input some basic app details
     - title: Fill in some steps
-      required:
-        - name
+      required: [name, owner]
       properties:
         name:
           title: App Name
@@ -31,6 +30,15 @@ spec:
           ui:autofocus: true  # This field gets auto-focused in UI
           ui:options:
             rows: 5  # Number of rows in the input area
+        owner:
+          title: Owner(
+          type: string
+          description: Owner of Projeto
+          ui:field: OwnerPicker
+          ui:options:
+            catalogFilter:
+              kind: Group
+
     # Ask the user where they want to store the code
     - title: Choose a Repo location
       required:
