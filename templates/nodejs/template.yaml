@@ -83,6 +83,8 @@ spec:
 
   # Outputs are displayed to the user after a successful execution of the template.
   output:
+    remoteUrl: ${{ steps.publish.output.remoteUrl }}
+    entityRef: ${{ steps.register.output.entityRef }}
     links:
     - title: Repository
       url: ${{ steps['publish'].output.remoteUrl }}
