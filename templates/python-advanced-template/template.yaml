@@ -33,6 +33,7 @@ spec:
           ui:options:
             catalogFilter:
               kind: Group
+  - title: Escolha o local do projeto
         repoUrl:
           title: Nome do Repositório
           type: string
