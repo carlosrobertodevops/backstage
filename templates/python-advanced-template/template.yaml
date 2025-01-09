@@ -31,7 +31,8 @@ spec:
           description: Equipe responsável pelo projeto
           ui:field: OwnerPicker
           ui:options:
-            allowedKids: [Group]
+            allowedKids:
+            - Groups
         repoUrl:
           title: Nome do Repositório
           type: string
