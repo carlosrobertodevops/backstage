@@ -28,10 +28,11 @@ spec:
         owner:
           title: Proprietário(s)
           type: string
-          description: Equipe responsável pelo projeto
+          description: Proprietário(s) do Projeto
           ui:field: OwnerPicker
           ui:options:
-            allowedKids: [Groups]
+            catalogFilter:
+              kind: Group
         repoUrl:
           title: Nome do Repositório
           type: string
