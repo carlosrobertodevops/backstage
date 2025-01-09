@@ -55,6 +55,7 @@ spec:
         values:
           name: ${{ parameters.name }}
           description: ${{ parameters.description }}
+          destinatio: ${{ parseRepoUrl parameters.repoUrl }}
           owner: ${{ parameters.owner }}
     steps:
   # Each step executes an action, in this case one templates files into the working directory.
