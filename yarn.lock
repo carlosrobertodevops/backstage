@@ -29540,6 +29540,8 @@ __metadata:
     "@backstage-community/plugin-copilot": "npm:^0.4.0"
     "@backstage/cli": "npm:^0.29.4"
     "@backstage/e2e-test-utils": "npm:^0.1.1"
+    "@backstage/plugin-techdocs": "npm:^1.12.0"
+    "@backstage/plugin-techdocs-backend": "npm:^1.11.4"
     "@globallogicuki/backstage-plugin-terraform": "npm:^0.7.1"
     "@playwright/test": "npm:^1.32.3"
     "@roadiehq/backstage-plugin-aws-lambda": "npm:^2.2.13"
