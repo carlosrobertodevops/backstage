@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Carregar variáveis do arquivo .env
+if [ -f .env ]; then
+  source .env
+else
+  echo ".env file not found!"
+  exit 1
+fi
+
+REPOSITORY="carlosrobertodevops/backstage"
+
+# Criar segredos no GitHub
+gh secret set PERSONAL_ACCESS_TOKEN -r "$REPOSITORY" -b "$GITHUB_TOKEN"
+gh secret set AWS_ACCESS_KEY_ID -r "$REPOSITORY" -b "$AWS_ACCESS_KEY_ID"
+gh secret set AWS_SECRET_ACCESS_KEY -r "$REPOSITORY" -b "$AWS_SECRET_ACCESS_KEY"
+gh secret set AWS_REGION -r "$REPOSITORY" -b "$AWS_REGION"
+
+echo "Segredos configurados com sucesso no repositório $REPOSITORY."

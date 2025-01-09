@@ -1,6 +1,6 @@
 # macOS
 .DS_Store
-*aws-id*
+# *aws-id*
 
 # Logs
 logs
