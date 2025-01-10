@@ -43,24 +43,11 @@ backend:
       user: ${POSTGRES_USER}
       password: ${POSTGRES_PASSWORD}
       database: ${POSTGRES_DATABASE}
-    # ensureExists: true
-    # pluginDivisionMode: schema
-    # plugin:
-    #   catalog:
-    #     connection:
-    #       database: ${POSTGRES_DATABASE}
-    #   auth:
-    #     connection:
-    #       database: ${POSTGRES_DATABASE}
-    #   app:
-    #     connection:
-    #       database: ${POSTGRES_DATABASE}
-    #   scaffolder:
-    #     connection:
-    #       database: ${POSTGRES_DATABASE}
+
   cache:
     store: memory
     # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
+
 copilot:
   scheduler:
     frequency:
@@ -105,10 +92,8 @@ proxy:
 # Note: After experimenting with basic setup, use CI/CD to generate docs
 # and an external cloud storage when deploying TechDocs for production use-case.
 # https://backstage.io/docs/features/techdocs/how-to-guides#how-to-migrate-from-techdocs-basic-to-recommended-deployment-approach
+
 techdocs:
-  builder: "local" # Alternatives - 'external'
-  generator:
-    runIn: "docker" # Alternatives - 'local'
   publisher:
     type: "awsS3"
     awsS3:
@@ -117,6 +102,13 @@ techdocs:
       credentials:
         accessKeyId: ${AWS_ACCESS_KEY_ID}
         secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
+  builder: "external" # Alternatives - 'external'
+  generator:
+    runIn: "docker" # Alternatives - 'local'
+    docker:
+      image: "techdocs-container:latest"
+  requestUrl: "remote"
+
 # auth:
 #   # see https://backstage.io/docs/auth/ to learn about auth providers
 #   providers:

@@ -43,7 +43,7 @@ spec:
     - title: Escolha o local do projeto
       required: [repoUrl]
       properties:
-      
+
         repoUrl:
           title: Nome do Repositório
           type: string
@@ -58,7 +58,6 @@ spec:
           type: boolean
           description: Se verdadeiro, inclui o suporte ao Docker.
   steps:
-  
     - id: fetch-base
       name: Criar Estrutura do Projeto
       action: fetch:template
@@ -69,7 +68,7 @@ spec:
           description: ${{ parameters.description }}
           destination: ${{ parseRepoUrl parameters.repoUrl }}
           owner: ${{ parameters.owner }}
-          
+
     steps:
   # Each step executes an action, in this case one templates files into the working directory.
     # - id: setup
