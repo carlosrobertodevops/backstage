@@ -107,7 +107,8 @@ techdocs:
     runIn: "docker" # Alternatives - 'local'
     docker:
       image: "techdocs-container:latest"
-  requestUrl: "remote"
+  requestUrl:
+    type: "remote"
 
 # auth:
 #   # see https://backstage.io/docs/auth/ to learn about auth providers
