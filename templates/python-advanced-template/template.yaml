@@ -14,7 +14,6 @@ spec:
     - title: Informações do Projeto
       required: [name, description, owner]
       properties:
-      
         name:
           title: Nome do Projeto
           type: string
