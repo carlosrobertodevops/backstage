@@ -20,9 +20,26 @@ spec:
         title: Name
         type: string
         description: Unique name of the component
+        default: 'app-node-backstage-template'
+        maxLength: 50
+        pattern: '^[a-zA-Z0-9\-]*$'
         ui:autofocus: true
+
+      description:
+        title: Descrição
+        type: string
+        description: Breve descrição do projeto
         ui:options:
-          rows: 5
+          rows: 5  # Number of rows in the input area
+
+      owner:
+          title: Proprietário(s)
+          type: string
+          description: Proprietário(s) do Projeto
+          ui:field: OwnerPicker
+          ui:options:
+            catalogFilter:
+              kind: Group
   - title: Choose a location
     required:
     - repoUrl
@@ -62,8 +79,12 @@ spec:
     input:
       repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
       catalogInfoPath: '/catalog-info.yaml'
+      github.com/project-slug: ${{ parameters.destination.owner }}/${{ parameters.destination.repo }}
+
   # Outputs are displayed to the user after a successful execution of the template.
   output:
+    remoteUrl: ${{ steps.publish.output.remoteUrl }}
+    entityRef: ${{ steps.register.output.entityRef }}
     links:
     - title: Repository
       url: ${{ steps['publish'].output.remoteUrl }}

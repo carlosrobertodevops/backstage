@@ -12,38 +12,53 @@ spec:
   type: service
   parameters:
     - title: Informações do Projeto
-      required:
-        - name
-        - description
-        - repoUrl
+      required: [name, description, owner]
       properties:
+      
         name:
           title: Nome do Projeto
           type: string
           description: Nome do projeto Python.
+          default: 'app-python-adv-backstage-template'
+          maxLength: 50
+          pattern: '^[a-zA-Z0-9\-]*$'
+          ui:autofocus: true
+
         description:
           title: Descrição
           type: string
           description: Breve descrição do projeto
+          ui:options:
+            rows: 5  # Number of rows in the input area
+
         owner:
           title: Proprietário(s)
           type: string
-          description: Equipe responsável pelo projeto
+          description: Proprietário(s) do Projeto
           ui:field: OwnerPicker
           ui:options:
-            allowedKids: [Group]
+            catalogFilter:
+              kind: Group
+
+    - title: Escolha o local do projeto
+      required: [repoUrl]
+      properties:
+      
         repoUrl:
           title: Nome do Repositório
           type: string
           ui:field: RepoUrlPicker
           ui:options:
             allowedHosts:
-            - github.com
+              - github.com
+          ui:autofocus: true
+
         useDocker:
           title: Usar Docker?
           type: boolean
           description: Se verdadeiro, inclui o suporte ao Docker.
   steps:
+  
     - id: fetch-base
       name: Criar Estrutura do Projeto
       action: fetch:template
@@ -51,7 +66,10 @@ spec:
         url: ./content
         values:
           name: ${{ parameters.name }}
-          # description: ${{ parameters.description }}
+          description: ${{ parameters.description }}
+          destination: ${{ parseRepoUrl parameters.repoUrl }}
+          owner: ${{ parameters.owner }}
+          
     steps:
   # Each step executes an action, in this case one templates files into the working directory.
     # - id: setup
@@ -85,13 +103,18 @@ spec:
       action: catalog:register
       input:
         repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-        catalogInfoPath: '/catalog-info.yaml'
+        annotations:
+          github.com/project-slug: ${{ parameters.destination.owner }}/${{ parameters.destination.repo }}
+        catalogInfoPath: '/catalog-info.yaml'  # Where the catalog info is stored
 
     # Outputs are displayed to the user after a successful execution of the template.
     output:
+      remoteUrl: ${{ steps.publish.output.remoteUrl }}
+      entityRef: ${{ steps.register.output.entityRef }}
       links:
       - title: Repository
         url: ${{ steps['publish'].output.remoteUrl }}
       - title: Open in catalog
         icon: catalog
         entityRef: ${{ steps['register'].output.entityRef }}
+     

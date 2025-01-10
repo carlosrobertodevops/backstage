@@ -7,9 +7,9 @@ metadata:
   title: Node.js App on AWS EKS Cluster
   description: Deploy a Node.js App on AWS EKS Cluster using Terraform
   tags:
+    - aws
     - terraform
     - eks
-    - aws
     - node
 # The specification for how the template behaves
 spec:
@@ -21,20 +21,37 @@ spec:
   parameters:
     # Ask the user to input some basic app details
     - title: Fill in some steps
-      required:
-        - name
+      required: [name, owner]
       properties:
         name:
-          title: App Name
+          title: Nome do Clsuter EKS
           type: string
           description: Unique name for your app
           ui:autofocus: true  # This field gets auto-focused in UI
+          default: 'eks-cluster-backstage-template'
+          maxLength: 50
+          pattern: '^[a-zA-Z0-9\-]*$'
+          ui:autofocus: true
+
+        description:
+          title: Descrição
+          type: string
+          description: Breve descrição do projeto
           ui:options:
             rows: 5  # Number of rows in the input area
+
+        owner:
+          title: Owner
+          type: string
+          description: Owner of Projeto
+          ui:field: OwnerPicker
+          ui:options:
+            catalogFilter:
+              kind: Group
+
     # Ask the user where they want to store the code
     - title: Choose a Repo location
-      required:
-        - repoUrl
+      required: [repoUrl]
       properties:
         repoUrl:
           title: Repository Location
@@ -43,12 +60,10 @@ spec:
           ui:options:
             allowedHosts:
               - github.com  # Allowed hosts for repository
+
     # Parameters for setting up the EKS cluster
     - title: Basic EKS Cluster Configuration
-      required:
-        - clusterName
-        - region
-        - action
+      required: [clusterName, region, action]
       properties:
         clusterName:
           title: Cluster Name
@@ -79,13 +94,16 @@ spec:
         url: ./content  # Where the base content is stored
         values:
           name: ${{ parameters.name }}
+          owner: ${{ parameters.owner }}
     # Publish the code to a GitHub repo
     - id: publish
       name: Publish
       action: publish:github
       input:
         allowedHosts: ['github.com']
+        nome: ${{ parameters.name }}
         description: This is ${{ parameters.name }}
+        owner: ${{ parameters.owner }}
         repoUrl: ${{ parameters.repoUrl }}
     # Trigger a GitHub Action to set up the EKS cluster
     - id: github-action
@@ -93,7 +111,7 @@ spec:
       action: github:actions:dispatch
       input:
         workflowId: manage-eks-cluster.yml  # GitHub Action workflow ID
-        repoUrl: 'github.com?repo=aws-eks&amp;owner=carlosrobertodevops'
+        repoUrl: 'github.com?repo=aws-eks&amp;owner=${{parameters.owner}}'
         branchOrTagName: 'main'  # The branch to run this action on
         workflowInputs:
           clusterName: ${{ parameters.clusterName }}
@@ -105,9 +123,13 @@ spec:
       action: catalog:register
       input:
         repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        annotations:
+          github.com/project-slug: ${{ parameters.destination.owner }}/${{ parameters.destination.repo }}
         catalogInfoPath: '/catalog-info.yaml'  # Where the catalog info is stored
   # Output links to the user after the template execution
   output:
+    remoteUrl: ${{ steps.publish.output.remoteUrl }}
+    entityRef: ${{ steps.register.output.entityRef }}
     links:
       - title: Repository
         url: ${{ steps['publish'].output.remoteUrl }}

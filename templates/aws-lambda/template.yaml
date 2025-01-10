@@ -91,7 +91,19 @@ spec:
         title: "feat: ${{ parameters.name }}"
         branchName: "feat-${{ parameters.name }}"
 
+    # Register the new component in the Backstage catalog
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        annotations:
+          github.com/project-slug: ${{ parameters.destination.owner }}/${{ parameters.destination.repo }}
+        catalogInfoPath: '/catalog-info.yaml'  # Where the catalog info is stored
+
   output:
+    remoteUrl: ${{ steps.publish.output.remoteUrl }}
+    entityRef: ${{ steps.register.output.entityRef }}
     links:
       - title: Repositório Lambda
         url: ${{steps.publish_lambda.output.remoteUrl}}

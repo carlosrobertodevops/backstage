@@ -1,8 +1,10 @@
 # Backstage - python-advanced-template by CarlosDevops
 ##  ${{ values.name }}
 
-${{ values.name }}
+${{ values.description }}
 
+
+Owner: ${{ values.owner }}
 ## Como executar
 
 ```bash
