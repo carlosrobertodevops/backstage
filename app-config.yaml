@@ -110,11 +110,22 @@ techdocs:
   requestUrl:
     type: "remote"
 
+# techdocs:
+#   builder: "external" # Alternatives - 'external'
+#   publisher:
+#     type: "local"
+#   generator:
+#     runIn: "docker" # Alternatives - 'local'
+
+#   requestUrl:
+#     type: "remote"
+
 # auth:
 #   # see https://backstage.io/docs/auth/ to learn about auth providers
 #   providers:
 #     # See https://backstage.io/docs/auth/guest/provider
 #     guest: {}
+
 auth:
   environment: development
   providers:

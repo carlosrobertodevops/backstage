@@ -62,7 +62,7 @@ backend.add(import('@backstage/plugin-search-backend-module-techdocs'));
 backend.add(import('@backstage/plugin-kubernetes-backend'));
 backend.add(import('@backstage-community/plugin-copilot-backend'));
 backend.add(import('@backstage/plugin-devtools-backend'));
-//
+
 // backend.add(import('@backstage/plugin-auth-backend-module-github-provider'));
 
 const customAuthResolver = createBackendModule({
