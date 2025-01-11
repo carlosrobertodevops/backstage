@@ -5590,6 +5590,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@backstage/plugin-techdocs-addons-test-utils@npm:^1.0.43":
+  version: 1.0.43
+  resolution: "@backstage/plugin-techdocs-addons-test-utils@npm:1.0.43"
+  dependencies:
+    "@backstage/core-app-api": "npm:^1.15.3"
+    "@backstage/core-plugin-api": "npm:^1.10.2"
+    "@backstage/integration-react": "npm:^1.2.2"
+    "@backstage/plugin-catalog": "npm:^1.26.0"
+    "@backstage/plugin-catalog-react": "npm:^1.15.0"
+    "@backstage/plugin-search-react": "npm:^1.8.4"
+    "@backstage/plugin-techdocs": "npm:^1.12.0"
+    "@backstage/plugin-techdocs-react": "npm:^1.2.12"
+    "@backstage/test-utils": "npm:^1.7.3"
+    testing-library__dom: "npm:^7.29.4-beta.1"
+  peerDependencies:
+    "@testing-library/react": ^16.0.0
+    "@types/react": ^16.13.1 || ^17.0.0 || ^18.0.0
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-router-dom: 6.0.0-beta.0 || ^6.3.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c0/5ad1c44ab53ec664f011063a6673542529a1cecc9b95ec036b30cef3f72c80d30afb2cbc9d564c2d835d05c92409cbce793645ed9f6ffe903bc5c6e05dbfdaa5
+  languageName: node
+  linkType: hard
+
 "@backstage/plugin-techdocs-backend@npm:^1.11.4":
   version: 1.11.4
   resolution: "@backstage/plugin-techdocs-backend@npm:1.11.4"
@@ -14368,6 +14395,7 @@ __metadata:
     "@backstage/plugin-search": "npm:^1.4.21"
     "@backstage/plugin-search-react": "npm:^1.8.4"
     "@backstage/plugin-techdocs": "npm:^1.12.0"
+    "@backstage/plugin-techdocs-addons-test-utils": "npm:^1.0.43"
     "@backstage/plugin-techdocs-module-addons-contrib": "npm:^1.1.19"
     "@backstage/plugin-techdocs-react": "npm:^1.2.12"
     "@backstage/plugin-user-settings": "npm:^0.8.17"
@@ -31272,6 +31300,13 @@ __metadata:
     glob: "npm:^7.1.4"
     minimatch: "npm:^3.0.4"
   checksum: 10c0/019d33d81adff3f9f1bfcff18125fb2d3c65564f437d9be539270ee74b994986abb8260c7c2ce90e8f30162178b09dbbce33c6389273afac4f36069c48521f57
+  languageName: node
+  linkType: hard
+
+"testing-library__dom@npm:^7.29.4-beta.1":
+  version: 7.29.4-beta.1
+  resolution: "testing-library__dom@npm:7.29.4-beta.1"
+  checksum: 10c0/5a64a11971d9aa8ec1fce9c664808e211830629c514423a4db9ded5f70f3176738daabf1e97fbb5cf1cfe82a752ca7469b71c2d610a64e24dee17943c7187f8d
   languageName: node
   linkType: hard
 

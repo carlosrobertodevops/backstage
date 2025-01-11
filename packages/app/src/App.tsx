@@ -42,6 +42,8 @@ import { DevToolsPage } from '@backstage/plugin-devtools';
 import { customDevToolsPage } from './components/devtools/CustomDevToolsPage';
 import { GraphiQLPage } from '@backstage-community/plugin-graphiql';
 
+
+
 const app = createApp({
   apis,
   // sonarQubePlugin,
@@ -85,20 +87,15 @@ const routes = (
   <FlatRoutes>
     <Route path="/" element={<Navigate to="catalog" />} />
     <Route path="/catalog" element={<CatalogIndexPage />} />
-    <Route
-      path="/catalog/:namespace/:kind/:name"
-      element={<CatalogEntityPage />}
-    >
+    <Route path="/catalog/:namespace/:kind/:name" element={<CatalogEntityPage />}>
       {entityPage}
     </Route>
     <Route path="/docs" element={<TechDocsIndexPage />} />
-    <Route
-      path="/docs/:namespace/:kind/:name/*"
-      element={<TechDocsReaderPage />}
-    >
+    <Route path="/docs/:namespace/:kind/:name/*" element={<TechDocsReaderPage />}>
       <TechDocsAddons>
         <ReportIssue />
       </TechDocsAddons>
+      {techDocsPage} // This is your custom TechDocs reader page
     </Route>
     <Route path="/create" element={<ScaffolderPage />} />
     <Route path="/api-docs" element={<ApiExplorerPage />} />
