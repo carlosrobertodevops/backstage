@@ -65,7 +65,7 @@ import {
 } from '@backstage-community/plugin-github-actions';
 
 import { EntitySonarQubeCard } from '@backstage-community/plugin-sonarqube';
-const MISSING_ANNOTATION_READ_MORE_URL = 'https://backstage.io/docs/features/software-catalog/descriptor';
+// const MISSING_ANNOTATION_READ_MORE_URL = 'https://backstage.io/docs/features/software-catalog/descriptor';
 
 import { EntityTerraformContent } from '@globallogicuki/backstage-plugin-terraform';
 
@@ -143,9 +143,9 @@ const overviewContent = (
     <Grid item md={6}>
       <EntityAboutCard variant="gridItem" />
     </Grid>
-    <Grid item md={6}>
+    {/* <Grid item md={6}>
       <EntitySonarQubeCard variant="gridItem" missingAnnotationReadMoreUrl={MISSING_ANNOTATION_READ_MORE_URL} />
-    </Grid
+    </Grid */}
     <Grid item md={6}>
       <EntitySonarQubeCard variant="gridItem" />
     </Grid>
