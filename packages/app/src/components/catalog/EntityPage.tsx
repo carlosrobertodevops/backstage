@@ -65,6 +65,9 @@ import {
 } from '@backstage-community/plugin-github-actions';
 
 import { EntitySonarQubeCard } from '@backstage-community/plugin-sonarqube';
+const MISSING_ANNOTATION_READ_MORE_URL = 'https://backstage.io/docs/features/software-catalog/descriptor';
+
+import { EntityTerraformContent } from '@globallogicuki/backstage-plugin-terraform';
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -140,6 +143,12 @@ const overviewContent = (
     <Grid item md={6}>
       <EntityAboutCard variant="gridItem" />
     </Grid>
+    <Grid item md={6}>
+      <EntitySonarQubeCard variant="gridItem" missingAnnotationReadMoreUrl={MISSING_ANNOTATION_READ_MORE_URL} />
+    </Grid
+    <Grid item md={6}>
+      <EntitySonarQubeCard variant="gridItem" />
+    </Grid>
     <Grid item md={6} xs={12}>
       <EntityCatalogGraphCard variant="gridItem" height={400} />
     </Grid>
@@ -168,6 +177,10 @@ const serviceEntityPage = (
 
     <EntityLayout.Route path="/ci-cd" title="CI/CD">
       {cicdContent}
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/terraform" title="Terraform">
+      <EntityTerraformContent />
     </EntityLayout.Route>
 
     <EntityLayout.Route

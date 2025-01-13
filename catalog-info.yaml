@@ -9,6 +9,8 @@ metadata:
   - scaffolder
   # Example for optional annotations
   annotations:
+    terraform/organization: orgName
+    terraform/workspaces: workspaceName1,workspaceName2,workspaceName3
     github.com/project-slug: backstage/backstage
     backstage.io/techdocs-ref: dir:.
 spec:
@@ -31,4 +33,20 @@ spec:
   type: template
   owner: user:carlos
   path: ./templates/python-advanced-template/template.yaml
+  lifecycle: experimental
+  annotations:
+    terraform/organization: orgName
+    terraform/workspaces: workspaceName1,workspaceName2,workspaceName3
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage
+  description: |
+    Backstage is an open-source developer portal that puts the developer experience first.
+  annotations:
+    sonarqube.org/project-key: ${SONARQUBE_YOUR_INSTANCE_NAME}/${SONARQUBE_YOUR_PROJECT_KEY}
+spec:
+  type: library
+  owner: CNCF
   lifecycle: experimental
