@@ -42,8 +42,6 @@ import { DevToolsPage } from '@backstage/plugin-devtools';
 import { customDevToolsPage } from './components/devtools/CustomDevToolsPage';
 import { GraphiQLPage } from '@backstage-community/plugin-graphiql';
 
-
-
 const app = createApp({
   apis,
   // sonarQubePlugin,

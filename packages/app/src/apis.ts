@@ -7,6 +7,8 @@ import {
   AnyApiFactory,
   configApiRef,
   createApiFactory,
+  errorApiRef,
+  githubAuthApiRef,
 } from '@backstage/core-plugin-api';
 
 import {
@@ -15,10 +17,10 @@ import {
 } from '@backstage-community/plugin-graphiql';
 
 export const apis: AnyApiFactory[] = [
-createApiFactory({
+  createApiFactory({
     api: graphQlBrowseApiRef,
     deps: { errorApi: errorApiRef, githubAuthApi: githubAuthApiRef },
-    factory: ({ errorApi, githubAuthApi }) =>
+    factory: () =>
       GraphQLEndpoints.from([
         // Use the .create function if all you need is a static URL and headers.
         GraphQLEndpoints.create({
