@@ -95,7 +95,7 @@ const routes = (
       <TechDocsAddons>
         <ReportIssue />
       </TechDocsAddons>
-      {techDocsPage} // This is your custom TechDocs reader page
+      {/* {techDocsPage} // This is your custom TechDocs reader page */}
     </Route>
     <Route path="/create" element={<ScaffolderPage />} />
     <Route path="/api-docs" element={<ApiExplorerPage />} />
@@ -112,12 +112,12 @@ const routes = (
     </Route>
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
+    <Route path="/graphiql" element={<GraphiQLPage />} />
     <Route path="/devtools" element={<DevToolsPage />} >
     {customDevToolsPage}
     </Route>
     <Route path="/tech-radar" element={<TechRadarPage width={1500} height={800} />} />
     <Route path="/copilot" element={<CopilotIndexPage />} />
-    <Route path="/graphiql" element={<GraphiQLPage />} />
   </FlatRoutes>
 );
 
