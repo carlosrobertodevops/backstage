@@ -33,22 +33,6 @@ spec:
           pattern: '^[a-zA-Z0-9\-]*$'
           ui:autofocus: true
 
-        description:
-          title: Descrição
-          type: string
-          description: Breve descrição do projeto
-          ui:options:
-            rows: 5  # Number of rows in the input area
-
-        owner:
-          title: Owner
-          type: string
-          description: Owner of Projeto
-          ui:field: OwnerPicker
-          ui:options:
-            catalogFilter:
-              kind: Group
-
     # Ask the user where they want to store the code
     - title: Choose a Repo location
       required: [repoUrl]
@@ -70,6 +54,7 @@ spec:
           type: string
           description: The name of your EKS cluster
           ui:autofocus: true
+
         region:
           title: AWS Region
           type: string
@@ -77,6 +62,7 @@ spec:
           enum:
             - us-east-1
             - us-west-2
+
         action:
           title: Action
           type: string
@@ -103,7 +89,6 @@ spec:
         allowedHosts: ['github.com']
         nome: ${{ parameters.name }}
         description: This is ${{ parameters.name }}
-        owner: ${{ parameters.owner }}
         repoUrl: ${{ parameters.repoUrl }}
     # Trigger a GitHub Action to set up the EKS cluster
     - id: github-action
