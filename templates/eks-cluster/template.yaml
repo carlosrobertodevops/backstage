@@ -21,7 +21,7 @@ spec:
   parameters:
     # Ask the user to input some basic app details
     - title: Fill in some steps
-      required: [name, owner]
+      required: [name]
       properties:
         name:
           title: Nome do Clsuter EKS
