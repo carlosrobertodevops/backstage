@@ -27,11 +27,10 @@ spec:
           title: Nome do Clsuter EKS
           type: string
           description: Unique name for your app
-          ui:autofocus: true  # This field gets auto-focused in UI
           default: 'eks-cluster-backstage-template'
           maxLength: 50
-          pattern: '^[a-zA-Z0-9\-]*$'
           ui:autofocus: true
+          ui:autofocus: true  # This field gets auto-focused in UI
 
     # Ask the user where they want to store the code
     - title: Choose a Repo location
