@@ -81,6 +81,7 @@ spec:
         values:
           name: ${{ parameters.name }}
           owner: ${{ parameters.owner }}
+    
     # Publish the code to a GitHub repo
     - id: publish
       name: Publish
@@ -90,6 +91,7 @@ spec:
         nome: ${{ parameters.name }}
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
+    
     # Trigger a GitHub Action to set up the EKS cluster
     - id: github-action
       name: Trigger GitHub Action
@@ -102,6 +104,7 @@ spec:
           clusterName: ${{ parameters.clusterName }}
           awsRegion: ${{ parameters.region }}
           action: ${{ parameters.action }}
+    
     # Register the new component in the Backstage catalog
     - id: register
       name: Register
