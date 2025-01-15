@@ -24,7 +24,7 @@ spec:
       required: [name]
       properties:
         name:
-          title: Nome do Clsuter EKS
+          title: Nome do Cluster EKS
           type: string
           description: Unique name for your app
           default: 'eks-cluster-backstage-template'
@@ -79,7 +79,7 @@ spec:
         values:
           name: ${{ parameters.name }}
           owner: ${{ parameters.owner }}
-    
+
     # Publish the code to a GitHub repo
     - id: publish
       name: Publish
@@ -89,20 +89,20 @@ spec:
         nome: ${{ parameters.name }}
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
-    
+
     # Trigger a GitHub Action to set up the EKS cluster
     - id: github-action
       name: Trigger GitHub Action
       action: github:actions:dispatch
       input:
         workflowId: manage-eks-cluster.yml  # GitHub Action workflow ID
-        repoUrl: 'github.com?repo=aws-eks&amp;owner=${{parameters.owner}}'
+        repoUrl: ${{ parameters.repoUrl }}
         branchOrTagName: 'main'  # The branch to run this action on
         workflowInputs:
           clusterName: ${{ parameters.clusterName }}
           awsRegion: ${{ parameters.region }}
           action: ${{ parameters.action }}
-    
+
     # Register the new component in the Backstage catalog
     - id: register
       name: Register
