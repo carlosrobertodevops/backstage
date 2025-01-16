@@ -171,6 +171,10 @@ const serviceEntityPage = (
       {overviewContent}
     </EntityLayout.Route>
 
+    <EntityLayout.Route path="/kubernetes" title="Kubernetes">
+      <EntityKubernetesContent />
+    </EntityLayout.Route>
+
     <EntityLayout.Route path="/github-actions" title="GitHub Actions">
       <EntityGithubActionsContent view='cards' />
     </EntityLayout.Route>

@@ -24,6 +24,7 @@ backend.add(import('@backstage/plugin-scaffolder-backend'));
 backend.add(import('@backstage/plugin-scaffolder-backend-module-github'));
 backend.add(import('@backstage/plugin-techdocs-backend'));
 
+
 // auth plugin
 backend.add(import('@backstage/plugin-auth-backend'));
 // See https://backstage.io/docs/backend-system/building-backends/migrating#the-auth-plugin
@@ -137,3 +138,11 @@ const customAuthResolver = createBackendModule({
 backend.add(customAuthResolver);
 // backend.add(import('@backstage-community/plugin-sonarqube-backend'));
 backend.start();
+function useHotMemoize(module: NodeModule, arg1: () => any) {
+  throw new Error('Function not implemented.');
+}
+
+function createEnv(arg0: string): any {
+  throw new Error('Function not implemented.');
+}
+

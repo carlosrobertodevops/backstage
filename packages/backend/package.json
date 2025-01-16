@@ -31,7 +31,7 @@
     "@backstage/plugin-catalog-backend-module-logs": "^0.1.6-next.1",
     "@backstage/plugin-catalog-backend-module-scaffolder-entity-model": "^0.2.4-next.1",
     "@backstage/plugin-devtools-backend": "^0.5.1-next.1",
-    "@backstage/plugin-kubernetes-backend": "^0.19.2-next.1",
+    "@backstage/plugin-kubernetes-backend": "^0.19.2",
     "@backstage/plugin-permission-backend": "^0.5.53-next.1",
     "@backstage/plugin-permission-backend-module-allow-all-policy": "^0.2.4-next.1",
     "@backstage/plugin-permission-common": "^0.8.4-next.0",
