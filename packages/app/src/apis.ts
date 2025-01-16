@@ -1,20 +1,7 @@
-import {
-  ScmIntegrationsApi,
-  scmIntegrationsApiRef,
-  ScmAuth,
-} from '@backstage/integration-react';
+import { AnyApiFactory, createApiFactory, configApiRef, errorApiRef, githubAuthApiRef } from '@backstage/core';
+import { scmIntegrationsApiRef, ScmIntegrationsApi, ScmAuth } from '@backstage/integration-react';
+import { graphQlBrowseApiRef, GraphQLEndpoints } from '@backstage/plugin-graphiql';
 
-import {
-  AnyApiFactory,
-  createApiFactory,
-  errorApiRef,
-  githubAuthApiRef
-} from '@backstage/core';
-
-import {
-  graphQlBrowseApiRef,
-  GraphQLEndpoints
-} from '@backstage/plugin-graphiql'
 
 export const apis: AnyApiFactory[] = [
   createApiFactory({
