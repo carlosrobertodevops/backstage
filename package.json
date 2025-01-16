@@ -56,6 +56,7 @@
   "dependencies": {
     "@backstage-community/plugin-copilot": "^0.4.0",
     "@backstage/core": "^0.7.14",
+    "@backstage/plugin-graphiql": "^0.3.8",
     "@backstage/plugin-techdocs": "^1.12.1-next.1",
     "@backstage/plugin-techdocs-backend": "^1.11.5-next.2",
     "@globallogicuki/backstage-plugin-terraform": "^0.7.1",

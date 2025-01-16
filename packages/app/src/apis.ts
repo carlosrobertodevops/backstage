@@ -15,12 +15,14 @@ export const apis: AnyApiFactory[] = [
     api: graphQlBrowseApiRef,
     deps: { errorApi: errorApiRef, githubAuthApi: githubAuthApiRef },
     factory: ({ errorApi, githubAuthApi }) =>
-      GraphQLEndpoints.github({
-        id: 'github',
-        title: 'GitHub',
-        url: 'https://api.github.com/graphql',
-        errorApi: errorApi,
-        githubAuthApi: githubAuthApi,
-      }),
-  }),
+        GraphQLEndpoints.github({
+          id: 'github',
+          title: 'GitHub',
+          url: 'https://api.github.com/graphql',
+          errorApi: errorApi,
+          githubAuthApi: githubAuthApi
+        }),
+      ]),
+  })
+
 ];

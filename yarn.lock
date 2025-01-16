@@ -32482,6 +32482,7 @@ __metadata:
     "@backstage/cli": "npm:^0.29.5-next.1"
     "@backstage/core": "npm:^0.7.14"
     "@backstage/e2e-test-utils": "npm:^0.1.1"
+    "@backstage/plugin-graphiql": "npm:^0.3.8"
     "@backstage/plugin-techdocs": "npm:^1.12.1-next.1"
     "@backstage/plugin-techdocs-backend": "npm:^1.11.5-next.2"
     "@globallogicuki/backstage-plugin-terraform": "npm:^0.7.1"
