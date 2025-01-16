@@ -2,7 +2,6 @@ import { AnyApiFactory, createApiFactory, configApiRef, errorApiRef, githubAuthA
 import { scmIntegrationsApiRef, ScmIntegrationsApi, ScmAuth } from '@backstage/integration-react';
 import { graphQlBrowseApiRef, GraphQLEndpoints } from '@backstage/plugin-graphiql';
 
-
 export const apis: AnyApiFactory[] = [
   createApiFactory({
     api: scmIntegrationsApiRef,
@@ -21,8 +20,7 @@ export const apis: AnyApiFactory[] = [
           url: 'https://api.github.com/graphql',
           errorApi: errorApi,
           githubAuthApi: githubAuthApi
-        }),
-      ]),
+        })
+      ])
   })
-
 ];
