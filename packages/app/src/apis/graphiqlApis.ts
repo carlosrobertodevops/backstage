@@ -8,7 +8,7 @@ import {
   GraphQLEndpoints
 } from '@backstage/plugin-graphiql'
 
-export const apis: AnyApiFactory[] = [
+export const graphiqlApis: AnyApiFactory[] = [
   createApiFactory({
     api: graphQlBrowseApiRef,
     deps: { },
