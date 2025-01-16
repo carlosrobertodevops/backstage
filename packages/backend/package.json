@@ -46,6 +46,7 @@
     "@backstage/plugin-search-backend-node": "^1.3.7-next.1",
     "@backstage/plugin-techdocs-backend": "^1.11.5-next.2",
     "@plusultra/plugin-scaffolder-dotnet-backend": "^1.1.2",
+    "@roadiehq/catalog-backend-module-gravatar": "^1.0.5",
     "app": "link:../app",
     "better-sqlite3": "^9.0.0",
     "node-gyp": "^10.0.0",
