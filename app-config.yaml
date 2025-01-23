@@ -94,7 +94,7 @@ proxy:
 # https://backstage.io/docs/features/techdocs/how-to-guides#how-to-migrate-from-techdocs-basic-to-recommended-deployment-approach
 
 techdocs:
-  builder: "local" # Alternatives - 'external'
+  # builder: "local" # Alternatives - 'external'
   publisher:
     type: "awsS3"
     awsS3:
