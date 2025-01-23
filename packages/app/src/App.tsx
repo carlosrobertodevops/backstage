@@ -95,14 +95,14 @@ const routes = (
       path="/docs/:namespace/:kind/:name/*"
       element={<TechDocsReaderPage />}
     />
-{/*     
+{/*
     <Route path="/docs" element={<TechDocsIndexPage />} />
     <Route path="/docs/:namespace/:kind/:name/*" element={<TechDocsReaderPage />}>
       <TechDocsAddons>
         <ReportIssue />
       </TechDocsAddons>
-      {techDocsPage} 
-    </Route> 
+      {techDocsPage}
+    </Route>
 */}
     <Route path="/create" element={<ScaffolderPage />} />
     <Route path="/api-docs" element={<ApiExplorerPage />} />
