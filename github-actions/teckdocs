@@ -12,3 +12,4 @@ gh secret set TECHDOCS_S3_BUCKET_NAME --body "$TECHDOCS_BUCKET"
 # gh secret set GITHUB_LOCATION --body "$GITHUB_LOCATION"
 # gh secret set GITHUB_BIO --body "$GITHUB_BIO"
 # gh secret set GITHUB_BLOG --body "$GITHUB_BLOG"
+
