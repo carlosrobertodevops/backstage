@@ -63,13 +63,7 @@ copilot:
 integrations:
   github:
   - host: github.com
-    # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
-    # about setting up the GitHub integration here: https://backstage.io/docs/integrations/github/locations#configuration
     token: ${GITHUB_TOKEN}
-  ### Example for how to add your GitHub Enterprise instance using the API:
-  # - host: ghe.example.net
-  #   apiBaseUrl: https://ghe.example.net/api/v3
-  #   token: ${GHE_TOKEN}
   aws:
     mainAccount:
       profile: carlosrobertodevops
@@ -93,28 +87,18 @@ proxy:
 # and an external cloud storage when deploying TechDocs for production use-case.
 # https://backstage.io/docs/features/techdocs/how-to-guides#how-to-migrate-from-techdocs-basic-to-recommended-deployment-approach
 
-techdocs:
-  builder: 'local'
-  publisher:
-    type: 'local'
-  generator:
-    runIn: local
-    docker:
-      image: 'techdocs-container:latest'
-  requestUrl:
-    type: 'remote'
 
-# techdocs:
-#   # builder: "local" # Alternatives - 'external'
-#   publisher:
-#     type: "awsS3"
-#     awsS3:
-#       bucketName: ${TECHDOCS_BUCKET}
-#       accountId: ${AWS_ACCOUNT_ID}
-#       credentials:
-#         accessKeyId: ${AWS_ACCESS_KEY_ID}
-#         secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
-#       region: ${AWS_REGION}
+techdocs:
+  # builder: "local" # Alternatives - 'external'
+  publisher:
+    type: "awsS3"
+    awsS3:
+      bucketName: ${TECHDOCS_BUCKET}
+      accountId: ${AWS_ACCOUNT_ID}
+      credentials:
+        accessKeyId: ${AWS_ACCESS_KEY_ID}
+        secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
+      region: ${AWS_REGION}
 aws:
   accounts:
   - accountId: ${AWS_ACCOUNT_ID}
