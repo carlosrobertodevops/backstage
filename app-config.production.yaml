@@ -85,24 +85,17 @@ proxy:
 # https://backstage.io/docs/features/techdocs/how-to-guides#how-to-migrate-from-techdocs-basic-to-recommended-deployment-approach
 
 techdocs:
-  builder: 'local'
+  builder: 'external' # Alternatives - 'external'
+  # generator:
+  #   runIn: 'docker' # Alternatives - 'local'
+  # publisher:
+  #   type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
   publisher:
-    type: 'local'
-  generator:
-    runIn: local
-
-# techdocs:
-#   builder: 'external' # Alternatives - 'external'
-#   # generator:
-#   #   runIn: 'docker' # Alternatives - 'local'
-#   # publisher:
-#   #   type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
-#   publisher:
-#     type: "awsS3"
-#     awsS3:
-#       bucketName: ${TECHDOCS_BUCKET}
-#       accountId: ${AWS_ACCOUNT_ID}
-#       region: ${AWS_REGION}
+    type: "awsS3"
+    awsS3:
+      bucketName: ${TECHDOCS_BUCKET}
+      accountId: ${AWS_ACCOUNT_ID}
+      region: ${AWS_REGION}
 
 auth:
   environment: production
