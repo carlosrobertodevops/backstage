@@ -2,7 +2,7 @@
 FROM node:20-bookworm-slim AS packages
 
 WORKDIR /app
-COPY backstage.json package.json yarn.lock ./
+COPY requirements.txt backstage.json package.json yarn.lock ./
 COPY .yarn ./.yarn
 COPY .yarnrc.yml ./
 
@@ -23,7 +23,9 @@ ENV PYTHON=/usr/bin/python3
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 	--mount=type=cache,target=/var/lib/apt,sharing=locked \
 	apt-get update && \
-	apt-get install -y --no-install-recommends python3 g++ build-essential && \
+	apt-get install -y --no-install-recommends python3 pip g++ build-essential && \
+	npm install -g @techdocs/cli && \
+	pip install -r requirements.txt && \
 	rm -rf /var/lib/apt/lists/*
 
 # Install sqlite3 dependencies. You can skip this if you don't use sqlite3 in the image,
@@ -32,7 +34,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 	--mount=type=cache,target=/var/lib/apt,sharing=locked \
 	apt-get update && \
 	apt-get install -y --no-install-recommends libsqlite3-dev && \
-	rm -rf /var/lib/apt/lists/*
+	rm -rf /var/lib/apt/lists/* 
 
 USER node
 WORKDIR /app
