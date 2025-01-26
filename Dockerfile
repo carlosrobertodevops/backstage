@@ -2,7 +2,7 @@
 FROM node:20-bookworm-slim AS packages
 
 WORKDIR /app
-COPY backstage.json package.json requirements.txt .lock ./
+COPY requirements.txt backstage.json package.json .lock ./
 COPY .yarn ./.yarn
 COPY .yarnrc.yml ./
 
