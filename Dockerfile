@@ -2,7 +2,7 @@
 FROM node:20-bookworm-slim AS packages
 
 WORKDIR /app
-COPY requirements.txt backstage.json package.json yarn.lock ./
+COPY backstage.json package.json requirements.txt yarn.lock ./
 COPY .yarn ./.yarn
 COPY .yarnrc.yml ./
 
@@ -36,7 +36,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 	rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g @techdocs/cli
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 USER node
 WORKDIR /app
