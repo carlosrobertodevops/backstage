@@ -28,7 +28,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 
 RUN npm install -g @techdocs/cli
 
-RUN pip install -r requirements.txt
+RUN pip install --break-system-packages mkdoc mkdocs-techdocs-core
 
 # Install sqlite3 dependencies. You can skip this if you don't use sqlite3 in the image,
 # in which case you should also move better-sqlite3 to "devDependencies" in package.json.
