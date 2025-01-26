@@ -2,10 +2,9 @@
 FROM node:20-bookworm-slim AS packages
 
 WORKDIR /app
-COPY backstage.json package.json requirements.txt yarn.lock ./
+COPY backstage.json package.json yarn.lock ./
 COPY .yarn ./.yarn
 COPY .yarnrc.yml ./
-
 
 COPY packages packages
 
@@ -35,9 +34,6 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 	apt-get install -y --no-install-recommends libsqlite3-dev && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN npm install -g @techdocs/cli
-RUN pip install -r requirements.txt
-
 USER node
 WORKDIR /app
 
@@ -50,7 +46,6 @@ RUN --mount=type=cache,target=/home/node/.cache/yarn,sharing=locked,uid=1000,gid
 	yarn install --immutable
 
 COPY --chown=node:node . .
-
 
 RUN yarn tsc
 RUN yarn --cwd packages/backend build
