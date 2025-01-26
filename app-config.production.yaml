@@ -85,8 +85,10 @@ techdocs:
   #builder: 'external' # Alternatives - 'external'
   # generator:
   #   runIn: 'docker' # Alternatives - 'local'
-  generators:
-    techdocs: 'docker'
+  # generators:
+  #   techdocs: 'docker'
+  generator:
+    runIn: 'local'
   publisher:
     type: 'awsS3'
     awsS3:
