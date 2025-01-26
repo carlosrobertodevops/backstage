@@ -92,6 +92,8 @@ proxy: ### Example for how to add a proxy endpoint for the frontend.
 
 techdocs:
   # builder: "local" # Alternatives - 'external'
+  generators:
+    techdocs: 'docker'
   publisher:
     type: 'awsS3'
     awsS3:
@@ -104,8 +106,6 @@ techdocs:
       region: ${AWS_REGION}
     requestUrl:
       type: "remote"
-  generator:
-    type: "local"
 
 aws:
   accounts:
