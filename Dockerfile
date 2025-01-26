@@ -23,10 +23,12 @@ ENV PYTHON=/usr/bin/python3
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 	--mount=type=cache,target=/var/lib/apt,sharing=locked \
 	apt-get update && \
-	apt-get install -y --no-install-recommends python3 pip g++ build-essential && \
-	npm install -g @techdocs/cli && \
-	pip install -r requirements.txt && \
+	apt-get install -y --no-install-recommends build-essential g++ python3 python3-dev python3-pip && \
 	rm -rf /var/lib/apt/lists/*
+
+RUN npm install -g @techdocs/cli
+
+RUN pip install -r requirements.txt
 
 # Install sqlite3 dependencies. You can skip this if you don't use sqlite3 in the image,
 # in which case you should also move better-sqlite3 to "devDependencies" in package.json.
@@ -34,7 +36,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 	--mount=type=cache,target=/var/lib/apt,sharing=locked \
 	apt-get update && \
 	apt-get install -y --no-install-recommends libsqlite3-dev && \
-	rm -rf /var/lib/apt/lists/* 
+	rm -rf /var/lib/apt/lists/*
 
 USER node
 WORKDIR /app

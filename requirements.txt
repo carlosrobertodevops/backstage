@@ -1,3 +1,2 @@
 mkdocs
-mkdocs-techdocs-core==1.*
-mkdocs-material  # Opcional, se você usar o tema Material para MkDocs
+mkdocs-techdocs-core
