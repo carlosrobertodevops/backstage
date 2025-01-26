@@ -109,22 +109,13 @@ techdocs:
     requestUrl:
       type: "remote"
 
-
 auth:
-  # environment: development
+  environment: development
   providers:
     github:
-      # development:
-      #   clientId: ${AUTH_GITHUB_CLIENT_ID}
-      #   clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
-      production:
+      development:
         clientId: ${AUTH_GITHUB_CLIENT_ID}
         clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
-
-auth:
-  environment: production
-  providers:
-    github:
       production:
         clientId: ${AUTH_GITHUB_CLIENT_ID}
         clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
