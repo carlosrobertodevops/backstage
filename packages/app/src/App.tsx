@@ -27,7 +27,6 @@ import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
 
 // DevTools
-import { devToolsPlugin } from '@backstage/plugin-devtools';
 import { UserSettingsPage } from '@backstage/plugin-user-settings';
 import { apis } from './apis';
 import { entityPage } from './components/catalog/EntityPage';
@@ -48,6 +47,7 @@ import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
 import { CopilotIndexPage } from '@backstage-community/plugin-copilot';
 import { TechRadarPage } from '@backstage-community/plugin-tech-radar';
+import { DevToolsPage } from '@backstage/plugin-devtools';
 import { customDevToolsPage } from './components/devtools/CustomDevToolsPage';
 import { GraphiQLPage } from '@backstage/plugin-graphiql';
 
