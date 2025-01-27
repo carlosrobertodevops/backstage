@@ -26,9 +26,19 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 	apt-get install -y --no-install-recommends build-essential g++ python3 python3-dev python3-pip && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN npm install -g @techdocs/cli
+# RUN npm install -g @techdocs/cli
 
-RUN pip install --break-system-packages mkdoc mkdocs-techdocs-core
+# RUN pip install --break-system-packages mkdoc mkdocs-techdocs-core
+
+RUN apt-get update && \
+	apt-get install -y python3 python3-pip python3-venv && \
+	rm -rf /var/lib/apt/lists/*
+
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+RUN pip3 install mkdocs-techdocs-core
 
 # Install sqlite3 dependencies. You can skip this if you don't use sqlite3 in the image,
 # in which case you should also move better-sqlite3 to "devDependencies" in package.json.
