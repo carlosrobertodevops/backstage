@@ -26,6 +26,8 @@ import {
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
 
+// DevTools
+import { devToolsPlugin } from '@backstage/plugin-devtools';
 import { UserSettingsPage } from '@backstage/plugin-user-settings';
 import { apis } from './apis';
 import { entityPage } from './components/catalog/EntityPage';
@@ -36,6 +38,8 @@ import {
   OAuthRequestDialog,
   SignInPage,
 } from '@backstage/core-components';
+
+// Custom DevTools
 import { createApp } from '@backstage/app-defaults';
 import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';

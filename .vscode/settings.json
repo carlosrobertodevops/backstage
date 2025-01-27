@@ -11,5 +11,7 @@
 	"editor.fontSize": 12,
 	"editor.fontFamily": "'Fira Code Light'",
 	"editor.codeLensFontFamily": "'Fira Code Light'",
-	"editor.codeLensFontSize": 12
+	"editor.codeLensFontSize": 12,
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true
 }
