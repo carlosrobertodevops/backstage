@@ -90,7 +90,7 @@ proxy:
 #     runIn: local
 
 techdocs:
-  builder: 'external' # Alternatives - 'external'
+  # builder: 'external' # Alternatives - 'external'
   # generator:
   #   runIn: 'docker' # Alternatives - 'local'
   # generators:
