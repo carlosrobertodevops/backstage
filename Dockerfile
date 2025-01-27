@@ -26,7 +26,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 	apt-get install -y --no-install-recommends build-essential g++ python3 python3-dev python3-pip && \
 	rm -rf /var/lib/apt/lists/*
 
-# RUN npm install -g @techdocs/cli
+RUN npm install -g @techdocs/cli
 
 # RUN pip install --break-system-packages mkdoc mkdocs-techdocs-core
 
