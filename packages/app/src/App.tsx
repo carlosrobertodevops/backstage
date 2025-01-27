@@ -48,7 +48,6 @@ import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
 import { CopilotIndexPage } from '@backstage-community/plugin-copilot';
 import { TechRadarPage } from '@backstage-community/plugin-tech-radar';
-import { DevToolsPage } from '@backstage/plugin-devtools';
 import { customDevToolsPage } from './components/devtools/CustomDevToolsPage';
 import { GraphiQLPage } from '@backstage/plugin-graphiql';
 
