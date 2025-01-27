@@ -98,7 +98,7 @@ proxy: ### Example for how to add a proxy endpoint for the frontend.
 #     runIn: local
 
 techdocs:
-  # builder: "local" # Alternatives - 'external'
+  builder: 'external' # Alternatives - 'external
   # generators:
   #   techdocs: 'docker'
   # generator:
