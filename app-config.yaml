@@ -90,31 +90,31 @@ proxy: ### Example for how to add a proxy endpoint for the frontend.
 # and an external cloud storage when deploying TechDocs for production use-case.
 # https://backstage.io/docs/features/techdocs/how-to-guides#how-to-migrate-from-techdocs-basic-to-recommended-deployment-approach
 
-techdocs:
-  builder: 'local'
-  publisher:
-    type: 'local'
-  generator:
-    runIn: local
-
 # techdocs:
-#   # builder: "local" # Alternatives - 'external'
-#   # generators:
-#   #   techdocs: 'docker'
-#   # generator:
-#   #   runIn: 'local'
+#   builder: 'local'
 #   publisher:
-#     type: 'awsS3'
-#     awsS3:
-#       bucketName: ${TECHDOCS_BUCKET}
-#       bucketRootPath: '/'
-#       accountId: ${AWS_ACCOUNT_ID}
-#       credentials:
-#         accessKeyId: ${AWS_ACCESS_KEY_ID}
-#         secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
-#       region: ${AWS_REGION}
-#     requestUrl:
-#       type: "remote"
+#     type: 'local'
+#   generator:
+#     runIn: local
+
+techdocs:
+  # builder: "local" # Alternatives - 'external'
+  # generators:
+  #   techdocs: 'docker'
+  # generator:
+  #   runIn: 'local'
+  publisher:
+    type: 'awsS3'
+    awsS3:
+      bucketName: ${TECHDOCS_BUCKET}
+      bucketRootPath: '/'
+      accountId: ${AWS_ACCOUNT_ID}
+      credentials:
+        accessKeyId: ${AWS_ACCESS_KEY_ID}
+        secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
+      region: ${AWS_REGION}
+    requestUrl:
+      type: "remote"
 
 auth:
   environment: development

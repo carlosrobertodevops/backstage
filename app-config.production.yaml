@@ -82,31 +82,31 @@ proxy:
 # https://backstage.io/docs/features/techdocs/how-to-guides#how-to-migrate-from-techdocs-basic-to-recommended-deployment-approach
 
 
-techdocs:
-  builder: 'local'
-  publisher:
-    type: 'local'
-  generator:
-    runIn: local
-
 # techdocs:
-#   #builder: 'external' # Alternatives - 'external'
-#   # generator:
-#   #   runIn: 'docker' # Alternatives - 'local'
-#   # generators:
-#   #   techdocs: 'docker'
-#   # generator:
-#   #   runIn: 'local'
+#   builder: 'local'
 #   publisher:
-#     type: 'awsS3'
-#     awsS3:
-#       bucketName: ${TECHDOCS_BUCKET}
-#       bucketRootPath: '/'
-#       accountId: ${AWS_ACCOUNT_ID}
-#       credentials:
-#         accessKeyId: ${AWS_ACCESS_KEY_ID}
-#         secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
-#       region: ${AWS_REGION}
+#     type: 'local'
+#   generator:
+#     runIn: local
+
+techdocs:
+  #builder: 'external' # Alternatives - 'external'
+  # generator:
+  #   runIn: 'docker' # Alternatives - 'local'
+  # generators:
+  #   techdocs: 'docker'
+  # generator:
+  #   runIn: 'local'
+  publisher:
+    type: 'awsS3'
+    awsS3:
+      bucketName: ${TECHDOCS_BUCKET}
+      bucketRootPath: '/'
+      accountId: ${AWS_ACCOUNT_ID}
+      credentials:
+        accessKeyId: ${AWS_ACCESS_KEY_ID}
+        secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
+      region: ${AWS_REGION}
 
 auth:
   environment: production
